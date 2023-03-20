@@ -1,11 +1,11 @@
-### Hack The Box - LFI (Local File Inclusion)
+### Hack The Box - Path Traversal
 
 Whilst the path can change for local file inclusion the majority of the time its the same files your interested in.
 
 ive compiled a small list and added them to a python script that can be edited to fit the requirements.
 
 
-### lfi.py
+### path-traversal.py
 ```python
 import requests
 
