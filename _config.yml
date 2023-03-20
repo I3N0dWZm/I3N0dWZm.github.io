@@ -1,5 +1,6 @@
 remote_theme: pages-themes/midnight@v0.2.0
 logo: https://wanatry.github.io/assets/img/SDG_logo.png
+site_favicon: https://wanatry.github.io/assets/img/favicon.ico
 name: .
 title: null
 description: python coding and various projects
