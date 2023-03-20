@@ -18,6 +18,34 @@ Original files conformed to a standard alpha numeric these corrupted files did n
 
 The code below checks each files extension if the extension conforms to the “alpha” list it will attempt to copy, if not exclude it, simple!
 
+Usbstick_recovery.py
+
+```
+import glob
+import shutil
+import os
+alpha = "abcdefghijklmnopqrstuvwxyz0123456789 -',"
+for f in glob.glob('/media/kali/0312-74C3/**/*.*', recursive=True):
+    halt = 0
+    try:
+        ext = f.split(".")[-1].lower()
+        for i in ext:
+            if i not in alpha:
+                print("odd : ",ext,f)
+                halt = 1
+                break
+            
+        if halt == 0:    
+            print(f)
+            dest = f.replace("/media/kali/0312-74C3","/home/kali/Documents/Drive")
+            print(dest)
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copy(f,dest)
+    except:
+        print("cant read filename")
+
+
+```
 
 Shortly after recovering the files the usb stick completely failed.
 
