@@ -1,6 +1,4 @@
-### Hack The Box - LFI - enumuration over /proc/(number)/cmdline
-
-Whilst the path can change for local file inclusion the majority of the time its the same files your interested in.
+### Hack The Box - path-traversal - enumuration over /proc/(number)/cmdline
 
 /proc/(number)/cmdline - this path can be very helpful wehn you havnt yet got terminal access to a box, it may be possible to see processes that are running on the box with local file inclusion if the vurnrability exists on the box.
   
