@@ -1,4 +1,4 @@
-theme: minima
+remote_theme: pages-themes/dinky@v0.2.0
 logo: /assets/img/SDG_logo.png
 title: code tinkering and code i wanatry
 description: python coding and various projects
