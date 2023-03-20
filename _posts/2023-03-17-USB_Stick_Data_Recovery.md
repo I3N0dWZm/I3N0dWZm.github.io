@@ -8,7 +8,7 @@ Extract from terminal view of listing the usb stick.
 
 ![alt text](https://wanatry.github.io/images/1_usb_stick.jpg)
 
-![alt text](https://wanatry.github.io/images/2_usb_stick.jpg)
+![alt text](https://wanatry.github.io/images/2_usb-stick.jpg)
 
 As you can see these files were odd, and some were 1gb or more.
 
