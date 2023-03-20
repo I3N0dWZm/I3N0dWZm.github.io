@@ -5,3 +5,5 @@ After spinning up a copy of kali linux I was able to view the data in an enclose
 these files made it difficult to do anything with the USB stick as they had absorbed all the space.
 
 Extract from terminal view of listing the usb stick.
+
+![alt text](https://wanatry.github.io/images/1_usb_stick.jpg)
