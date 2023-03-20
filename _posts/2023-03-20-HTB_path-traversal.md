@@ -1,6 +1,6 @@
 ### Hack The Box - Path Traversal
 
-Whilst the path can change for local file inclusion the majority of the time its the same files your interested in.
+Whilst the path can change for path traversal the majority of the time its the same files your interested in.
 
 ive compiled a small list and added them to a python script that can be edited to fit the requirements.
 
