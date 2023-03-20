@@ -7,3 +7,19 @@ these files made it difficult to do anything with the USB stick as they had abso
 Extract from terminal view of listing the usb stick.
 
 ![alt text](https://wanatry.github.io/images/1_usb_stick.jpg)
+
+![alt text](https://wanatry.github.io/images/2_usb_stick.jpg)
+
+As you can see these files were odd, and some were 1gb or more.
+
+I set about writing a small script to recover the usable data and copying it to a backup folder on my documents folder in linux.
+
+Original files conformed to a standard alpha numeric these corrupted files did not.
+
+The code below checks each files extension if the extension conforms to the “alpha” list it will attempt to copy, if not exclude it, simple!
+
+
+Shortly after recovering the files the usb stick completely failed.
+
+![alt text](https://wanatry.github.io/images/3_usb_stick.jpg)
+
