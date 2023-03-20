@@ -1,4 +1,4 @@
-### Recovering Files from a USB stick thats files with random corrupt files names
+### Recovering Files from a USB stick with randomly corrupt files names
 
 
 A user came to me with a corrupted usb stick, most of the original files seemed to be intact but a lot of random large files had been generated, 
@@ -22,7 +22,7 @@ The code below checks each files extension if the extension conforms to the “a
 
 #### Usbstick_recovery.py
 
-```
+```python
 import glob
 import shutil
 import os
