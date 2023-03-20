@@ -1,4 +1,4 @@
-##Headers
+### Headers
 Recovering Files from a USB stick thats files with random corrupt files names
 
 A user came to me with a corrupted usb stick, most of the original files seemed to be intact but a lot of random large files had been generated, 
