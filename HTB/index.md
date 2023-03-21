@@ -5,8 +5,10 @@
 _______________________________________________________________
 
 
-[HTB Information gathering](https://wanatry.github.io/HTB/HTB_info_gather.html)
+[HTB Information Gathering](https://wanatry.github.io/HTB/HTB_info_gather.html)
 
-[HTB path traversal - py script](https://wanatry.github.io/HTB/HTB_path-traversal.html)
+[HTB M0rsarchive Challenge](https://wanatry.github.io/HTB/HTB_M0rsarchive_Challenge.html)
 
-[HTB path traversal /proc/(number)/cmdline - py script](https://wanatry.github.io/HTB/HTB_proc-cmdline.html)
+[HTB Path Traversal - py script](https://wanatry.github.io/HTB/HTB_path-traversal.html)
+
+[HTB Path Traversal /proc/(number)/cmdline - py script](https://wanatry.github.io/HTB/HTB_proc-cmdline.html)
