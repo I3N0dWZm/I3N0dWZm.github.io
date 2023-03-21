@@ -7,7 +7,7 @@ Even worse is the root password was DES encrypted
 
 ![cheap_cctv_exploit](https://wanatry.github.io/images/1_cheap_cctv.png)
 
-path traversal, passwd file viewable weak encryption and a root password that seems locked, great ...
+path traversal, passwd file viewable, weak encryption and a root password that seems locked, great ...
 
 
 ```text
@@ -19,5 +19,4 @@ Cracked in 10 seconds, even with a simple brute force command.
 
 absxcfbgXtb3o:xc3511
 
-
-This CCTV system has been removed and changed for a more secure unit after this was proved.
+This CCTV system has been removed and changed for a more secure unit when this was proved.
