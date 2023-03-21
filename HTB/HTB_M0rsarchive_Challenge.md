@@ -100,4 +100,120 @@ def mainy():
 mainy()
 ```
 
+The second script would attempt to crack the password by comapring the image segments against be existing libary, if match was not found it would output the image to a tmp directory and finish, i would then manually check the image update the filename and move it to the libary.
+
+### password_cracker.py
+```python
+from zipfile import ZipFile
+import cv2
+import glob
+import os
+import shutil
+import time
+def_path = 'C:/HTB/Challenges/M0rsarchive/'
+
+def comparer(image):
+	result = "_"
+	img2 	= cv2.imread(image) 
+	img3 	= (255-img2)
+	for name in glob.glob(def_path + 'lookup/*.jpg'):
+		img1 = cv2.imread(name)	
+		try:
+			errorL2 = cv2.norm( img1, img2, cv2.NORM_L2 )
+			if errorL2 < 0.1:
+				result = name.split("\\")[1].split("_")[0]
+				break
+			else:
+				errorL2 = cv2.norm( img1, img3, cv2.NORM_L2 )#checked inverted copy
+				if errorL2 < 0.1:
+					result = name.split("\\")[1].split("_")[0]
+					break			
+		except:
+			pass
+	return result
+
+def pass_builder():
+	result = ""
+	res = 1
+	c = 1
+	while res == 1:
+		if os.path.exists(def_path + 'tmp/'+str(c)+'.jpg'):		
+			r = comparer(def_path + 'tmp/'+str(c)+'.jpg')
+			result 	= result + r
+			if r == "_":
+				shutil.copyfile(def_path + 'tmp/'+str(c)+'.jpg', def_path + 'check/'+str(c)+'.jpg')				
+		else:
+			res = 0
+		c = c + 1
+	time.sleep(0.5)
+	for item in glob.glob(def_path + 'tmp/*.jpg'):
+		os.remove(item)
+	return result
+
+def cropper(img):
+	h, w = img.shape
+	y = 0
+	x = 0
+	counter = 1
+	while y < h-1:
+		crop_img = img[y+1:y+2, x:x+w]	
+		cv2.imwrite(def_path + 'tmp/' +str(counter)+ '.jpg', crop_img)	
+		counter = counter + 1
+		y = y + 2
+		
+def read_image(pwd):
+	try:
+		originalImage = cv2.imread(pwd)
+		grayImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2GRAY)
+		(thresh, blackAndWhiteImage) = cv2.threshold(grayImage, 128, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY)
+		h, w = blackAndWhiteImage.shape
+		if cv2.countNonZero(blackAndWhiteImage) == h * w:
+			print ("image is all white!")
+			rgb = cv2.cvtColor(originalImage, cv2.COLOR_BGR2RGB)	#change colourspace and try again.		
+			grayImage = cv2.cvtColor(rgb, cv2.COLOR_BGR2GRAY)
+			(thresh, blackAndWhiteImage) = cv2.threshold(grayImage, 128, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY)
+		if cv2.countNonZero(blackAndWhiteImage) == 0:
+			print ("image is all black!")		
+			rgb = cv2.cvtColor(originalImage, cv2.COLOR_BGR2RGB)	#change colourspace and try again.		
+			grayImage = cv2.cvtColor(rgb, cv2.COLOR_BGR2GRAY)
+			(thresh, blackAndWhiteImage) = cv2.threshold(grayImage, 128, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY)			
+		cropper(blackAndWhiteImage)
+	except:
+		print("cant read pwd.png")
+
+def crack_zip(password,zip_file):
+	result = 0
+	try:
+		print ("trying - " + password + " password length : " + str(len(password)))#
+		with ZipFile(zip_file) as zf:
+			zf.extractall(pwd=bytes(password.lower(),'utf-8'),path=def_path + 'flags')
+		print ("success ...")
+		result = 1
+	except:
+		print("didnt work ...")
+	return result
+
+def mainy():
+	count = 999
+	result = 1
+	while result == 1:
+		zip_file = def_path + 'flags/flag/flag_' +str(count)+ '.zip'
+		print (zip_file.split("flag/")[1])
+		read_image(def_path + 'flags/flag/pwd.png')
+		password = pass_builder()
+		print(password)
+		result = crack_zip(password,zip_file)
+		if os.path.exists(def_path + 'flags/flag/flag_' +str(count+2)+ '.zip'):
+			os.remove(def_path + 'flags/flag/flag_' +str(count+2)+ '.zip')
+		count = count - 1
+		time.sleep(0.5)
+		
+mainy()
+```
+
+
+
+
+
+
 
