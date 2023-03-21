@@ -15,6 +15,6 @@ change this
 ```
 
 to this
-
 ```text
-/Name (Watermark) /Type /OCG /Usage << /Export << /ExportState /OFF >> /PageElement << /Subtype /FG >> /Print << /PrintState /OFF >> /View << /ViewState /OFF ```
+/Name (Watermark) /Type /OCG /Usage << /Export << /ExportState /OFF >> /PageElement << /Subtype /FG >> /Print << /PrintState /OFF >> /View << /ViewState /OFF
+```
