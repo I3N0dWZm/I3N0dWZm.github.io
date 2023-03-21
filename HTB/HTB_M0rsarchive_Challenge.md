@@ -10,7 +10,8 @@ this involved two scripts and some manual updating of the libary (in the end!)
 
 the first script was a simple brute force script to attempt every combination and once succesful extract and zip and chop the images name them with the relivant number or character and add to the libary.I could see the password was increasing in complexity each time so this would have limited success but a good starting point.
 
-
+### brute_forcer.py
+```python
 from zipfile import ZipFile
 import cv2
 import time
@@ -97,6 +98,6 @@ def mainy():
 		print('-------------------------------------------')
 
 mainy()
-
+```
 
 
