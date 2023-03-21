@@ -7,6 +7,6 @@ _______________________________________________________________
 
 ### [General Stuff](https://wanatry.github.io/general/)
 
-### [HTB Stuff](https://wanatry.github.io/HTB/)
+### [HTB Pages](https://wanatry.github.io/HTB/)
 
-### [PDF Stuff](https://wanatry.github.io/PDF/)
+### [PDF Manipulation Pages](https://wanatry.github.io/PDF/)
