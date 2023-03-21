@@ -7,7 +7,7 @@ Even worse is the root password was DES encrypted
 
 ![cheap_cctv_exploit](https://wanatry.github.io/images/1_cheap_cctv.png)
 
-path traversal, passwd file viewable, weak encryption and a root password that seems locked, great ...
+http not https, path traversal, passwd file viewable, weak encryption, but is root password easy to guess? 
 
 
 ```text
