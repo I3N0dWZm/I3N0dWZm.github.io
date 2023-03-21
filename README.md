@@ -1,6 +1,6 @@
 Welcome - im wanatry,
 
-Here are a few interesting (to me), posts. 
+Here are a few write ups ive created when stumbling across an issue, or equally some task im trying to simplify.
 
 _______________________________________________________________
 
