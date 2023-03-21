@@ -5,4 +5,4 @@
 _______________________________________________________________
 
 
-[HTB Information Gathering](https://wanatry.github.io/PDF/HTB_info_gather.html)
+[Edit Text in PDF with Notepad](https://wanatry.github.io/PDF/Edit_Text_On_A_PDF.html)
