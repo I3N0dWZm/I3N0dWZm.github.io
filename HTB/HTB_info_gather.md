@@ -32,8 +32,10 @@ nano /etc/hosts
 
 should the box have a website (95%) seem to, its worth enumerating over it (and again when/if directories are found).
 
+not limited to the below files, if you dont find anything try another.
+
 ```text
-gobuster dir -w /usr/fshare/seclists/Discovery/Web-Content/raft-medium-directories.txt -u "http://name.htb/" -t 30 -k
+gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -u "http://name.htb/" -t 30 -k
 gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -u "http://name.htb/" -t 30 -k
 gobuster dir -w /usr/share/seclists/Discovery/Web-Content/combined_directories.txt -u "http://name.htb/" -t 30 -k
 ```
@@ -45,5 +47,9 @@ wfuzz -u http://name.htb -H "Host: FUZZ.name.htb" -w /usr/share/seclists/Discove
 or
 ffuf -u http://name.htb -H "Host: FUZZ.name.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
 ```
+try with different flags exluding reponse code or response size, different results?
+
+
+
 
 
