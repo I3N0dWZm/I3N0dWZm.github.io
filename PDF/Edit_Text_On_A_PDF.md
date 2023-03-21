@@ -7,6 +7,7 @@ if the PDF is mostly text anyway, you could uncompress it and edit it mainly in 
 
 This command will take the ORGINAL.pdf and create NEW.pdf
 
+```text
 qpdf --decrypt --stream-data=uncompress --compress-streams=n ORIGINAL.pdf NEW.pdf
-
+```
 should now be able to open the NEW.pdf in notepad and search for the text you wish to change.
