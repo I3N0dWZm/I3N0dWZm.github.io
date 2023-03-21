@@ -9,3 +9,6 @@ _______________________________________________________________
 
 [Clean PDFs before processing](https://wanatry.github.io/PDF/Simple_Clean_PDF.html)
 
+[Removing a watermark](https://wanatry.github.io/PDF/Removing_watermarks.html)
+
+
