@@ -4,6 +4,8 @@ I was running a nessus scan and came upon a CCTV system, it was alowing path tra
 
 Even worse is the root password was DES encrypted
 
+![alt text](https://wanatry.github.io/images/1_cheap_cctv.png)
+
 path traversal, passwd file viewable weak encryption and a root password that seems locked, great ...
 
 
