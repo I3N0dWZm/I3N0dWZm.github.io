@@ -5,4 +5,4 @@
 _______________________________________________________________
 
 
-[Edit Text in PDF with Notepad](https://wanatry.github.io/PDF/Edit_Text_On_A_PDF.html)
+[Edit Text in a PDF with Notepad](https://wanatry.github.io/PDF/Edit_Text_On_A_PDF.html)
