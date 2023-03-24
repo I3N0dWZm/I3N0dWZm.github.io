@@ -7,9 +7,9 @@ This type of encryption requires a addon to most pdf viewers which connects to t
 
 I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
 
-monitoring the request response information in burp suite, i could see the majority of parameters were being parroted back from request too response, the only fields of real interest was the "Code=" and the Perms=, as they were not in the request but was in the reponse, it also appeared to remain the same for the file over multiple requests/reponses.
+monitoring the request response information in burp suite, i could see the majority of parameters were being parroted back from request too response, the only fields of real interest was the "Code=" and the Perms=, as these were not in the request but were in the reponse, it also appeared to remain the same for this file over multiple requests/reponses.
 
-"code" must be used to decrypt the pdf in some way and perms must be a persmission level.
+"code" must be used to decrypt the pdf in some way and perms must be a permission level.
 
 response when opening default example - installcomplete.pdf
 note - omited epoch timestamp
@@ -28,12 +28,12 @@ i found running the script below with this command allowed me to increase privil
 mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0.0.1 --ssl-insecure
 ```
 
-
 filters.py
 ```python
 from mitmproxy import ctx
 from mitmproxy import http
 
+server = "plugin.servername.com" #change this to the destination server for authorization
 docuid = ""
 servid = ""
 epocht = ""
@@ -82,7 +82,7 @@ def request(flow: http.HTTPFlow) -> None:
     global epocht
     global ident3id
     global ident4id
-    if flow.request.pretty_host == "plugin.fileopen.com":
+    if flow.request.pretty_host == server:
         flow.request.host = "zzz.zzz"
         request = (str(flow.request))
         bits = str(request).split("&")
