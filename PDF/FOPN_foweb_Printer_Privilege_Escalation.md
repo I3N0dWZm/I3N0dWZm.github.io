@@ -33,7 +33,8 @@ filters.py
 from mitmproxy import ctx
 from mitmproxy import http
 
-server = "plugin.servername.com" #change this to the destination server for authorization
+server = "plugin.servername.com"    #change this to the destination server for authorization
+mcode = "mnopq"                     #change this, magic code found in docperm response
 docuid = ""
 servid = ""
 epocht = ""
@@ -70,10 +71,10 @@ def response(flow: http.HTTPFlow):
         data = data + "StringFormat=ASCII&"
         data = data + "ServId="+servid+"&"
         data = data + "DocuId="+docuid+"&"
-        data = data + "Ident3ID="+ident3id+"&"#number3
-        data = data + "Ident4ID="+ident4id+"&"#number4
-        data = data + "Code=mnopq&"   #magic code
-        data = data + "Perms=117"     #105 block printing lets try 117    
+        data = data + "Ident3ID="+ident3id+"&
+        data = data + "Ident4ID="+ident4id+"&
+        data = data + "Code="+mcode+"&"         #magic code
+        data = data + "Perms=117"               #105 block printing lets try 117    
         flow.response.content=bytes(data,"UTF-8")
         
 def request(flow: http.HTTPFlow) -> None:
