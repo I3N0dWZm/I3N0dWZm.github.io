@@ -24,7 +24,7 @@ i found running the script below with this command allowed me to increase privil
 
 ```text
 mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0..1 --ssl-insecure
-```text
+```
 
 
 filters.py
