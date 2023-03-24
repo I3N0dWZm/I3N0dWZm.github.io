@@ -99,6 +99,11 @@ def mainy():
 
 mainy()
 ```
+this got me part way there, and i had a better understanding of what was required.
+
+
+---
+### The second script
 
 The second script would attempt to crack the password by comparing the image segments against be existing libary, 
 If match was not found for one of the segments it would output the image to a tmp directory and finish, 
