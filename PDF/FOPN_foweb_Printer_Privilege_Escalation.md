@@ -20,6 +20,14 @@ Plan of action - if i can re-send the code to open the file and change the perms
 
 using mitmproxy i was able to build a basic python script to intercept the requests and modify the responses.
 
+i found running the script below with this command allowed me to increase privilege.
+
+```text
+mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0..1 --ssl-insecure
+```text
+
+
+filters.py
 ```python
 from mitmproxy import ctx
 from mitmproxy import http
