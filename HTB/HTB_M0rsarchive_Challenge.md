@@ -100,7 +100,18 @@ def mainy():
 mainy()
 ```
 
-The second script would attempt to crack the password by comapring the image segments against be existing libary, if match was not found it would output the image to a tmp directory and finish, i would then manually check the image update the filename and move it to the libary.
+The second script would attempt to crack the password by comparing the image segments against be existing libary, 
+If match was not found for one of the segments it would output the image to a tmp directory and finish, 
+I would then manually check the images in the tmp directory update the filename and move it to the libary, then rerun.
+This took several retries to build up a full image libary, but was quite quick once completed. 
+
+The script has a few new features over the previous, such as checking each segment againt each item in the libary and an inverted version.
+
+It will change the colour space if the image is all black or all white when its converted to grayscale, sometimes the colors of the morse code are to close to the backround image, so it needed a fallback.
+
+it will remove exisiting zip files, so it doesnt fill up the hard-drive.
+
+TODO - The compare scrpt is not efficient - but does the job - the lookup libary should really be stored in memory only once.
 
 ### password_cracker.py
 ```python
