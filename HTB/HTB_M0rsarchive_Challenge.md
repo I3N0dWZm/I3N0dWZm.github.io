@@ -116,7 +116,7 @@ It will change the colour space if the image is all black or all white when its 
 
 it will remove exisiting zip files, so it doesnt fill up the hard-drive.
 
-TODO - The compare scrpt is not efficient - but does the job - the lookup libary should really be stored in memory only once.
+TODO - The comparer function is not efficient - but does the job - the lookup libary should really be stored in memory only once.
 
 ### password_cracker.py
 ```python
