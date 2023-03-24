@@ -33,8 +33,8 @@ filters.py
 from mitmproxy import ctx
 from mitmproxy import http
 
-server = "plugin.servername.com"    #change this to the destination server for authorization
-mcode = "mnopq"                     #change this, magic code found in docperm response
+server = "plugin.servername.com"    #destination server for authorization
+mcode = "mnopq"                     #magic code found in docperm response
 docuid = ""
 servid = ""
 epocht = ""
