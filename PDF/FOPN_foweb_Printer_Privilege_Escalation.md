@@ -75,8 +75,8 @@ def response(flow: http.HTTPFlow):
         data = data + "StringFormat=ASCII&"
         data = data + "ServId="+servid+"&"
         data = data + "DocuId="+docuid+"&"
-        data = data + "Ident3ID="+ident3id+"&
-        data = data + "Ident4ID="+ident4id+"&
+        data = data + "Ident3ID="+ident3id+"&"
+        data = data + "Ident4ID="+ident4id+"&"
         data = data + "Code="+mcode+"&"         #magic code
         data = data + "Perms=117"               #105 blocks printing, lets try 117    
         flow.response.content=bytes(data,"UTF-8")
