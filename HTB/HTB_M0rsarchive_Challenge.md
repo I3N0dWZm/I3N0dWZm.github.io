@@ -105,7 +105,7 @@ this got me part way there, and i had a better understanding of what was require
 ---
 ### The second script
 
-The second script would attempt to crack the password by comparing the image segments against be existing libary, 
+The second script would attempt to crack the password by comparing the image segments against the existing libary created by the first script, 
 If match was not found for one of the segments it would output the image to a tmp directory and finish, 
 I would then manually check the images in the tmp directory update the filename and move it to the libary, then rerun.
 This took several retries to build up a full image libary, but was quite quick once completed. 
