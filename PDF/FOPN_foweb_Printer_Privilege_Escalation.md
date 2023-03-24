@@ -12,19 +12,20 @@ monitoring the request response information in burp suite, i could see the major
 "code" must be used to decrypt the pdf in some way and perms must be a persmission level.
 
 response when opening default example - installcomplete.pdf
+note - omited epoch timestamp
 ```text
 Request=Setting = RetVal=Answer&Stamp=0000000000&StringFormat=ASCII&RequestSchema=Default
 Request=DocPerm = RetVal=Answer&Stamp=0000000000&ServId=InstallComplete&DocuId=D-700&Ident3ID=number3&Ident4ID=number4&Code=mnopq&Perms=105
 ```
 
-Plan of action - if i can re-send the code to open the file and change the perms field to increase privilages i can then print ...
+Plan of action - if i can re-send the code to open the file and change the perms field to increase privileges, i can then print ...
 
 using mitmproxy i was able to build a basic python script to intercept the requests and modify the responses.
 
 i found running the script below with this command allowed me to increase privilege.
 
 ```text
-mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0..1 --ssl-insecure
+mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0.0.1 --ssl-insecure
 ```
 
 
@@ -58,7 +59,7 @@ def response(flow: http.HTTPFlow):
         flow.response.status_code=200        
         data = "RetVal=Answer&"    
         data = data + "Stamp="+epocht+"&" 
-        data = data + "StringFormat=ASCII&"#ASCII or Utf8
+        data = data + "StringFormat=ASCII&"
         data = data + "RequestSchema=Default" 
         flow.response.content=bytes(data,"UTF-8")
         
