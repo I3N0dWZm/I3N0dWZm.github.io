@@ -7,13 +7,14 @@ This type of encryption requires a addon to most pdf viewers which connects to t
 
 I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
 
-monitoring the request response information in burp suite, i could the majority of parameters were being parroted back from request to response, the only fields of real interest was the "Code=" and the Perms=, as they were not in the request but was in the reponse, it also appeared to remain the same for the file over multiple requests/reponses.
+monitoring the request response information in burp suite, i could see the majority of parameters were being parroted back from request too response, the only fields of real interest was the "Code=" and the Perms=, as they were not in the request but was in the reponse, it also appeared to remain the same for the file over multiple requests/reponses.
 
 "code" must be used to decrypt the pdf in some way and perms must be a persmission level.
 
 response when opening default example - installcomplete.pdf
 ```text
-RetVal=Answer&Stamp=000000000&ServId=InstallComplete&DocuId=D-700&Ident3ID=number3&Ident4ID=number4&Code=mnopq&Perms=105
+Request=Setting = RetVal=Answer&Stamp=0000000000&StringFormat=ASCII&RequestSchema=Default
+Request=DocPerm = RetVal=Answer&Stamp=0000000000&ServId=InstallComplete&DocuId=D-700&Ident3ID=number3&Ident4ID=number4&Code=mnopq&Perms=105
 ```
 
 Plan of action - if i can re-send the code to open the file and change the perms field to increase privilages i can then print ...
@@ -58,7 +59,7 @@ def response(flow: http.HTTPFlow):
         data = "RetVal=Answer&"    
         data = data + "Stamp="+epocht+"&" 
         data = data + "StringFormat=ASCII&"#ASCII or Utf8
-        data = data + "RequestSchema=All" 
+        data = data + "RequestSchema=Default" 
         flow.response.content=bytes(data,"UTF-8")
         
     if ".ashx?Request=DocPerm" in flow.request.pretty_url:        
