@@ -11,7 +11,7 @@ This type of encryption requires an addon to most pdf viewers which connects to 
 
 Im only testing with the example document PDF, but I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
 
-Monitoring the request/response information in burp suite, i could see the majority of parameters were being parroted back from request -> response, the only parameters of real interest was the "Code" and the Perms, as these were not in the request but were in the reponse, it also appeared to remain the same for this pdf over multiple requests/reponses.
+Monitoring the request/response information in burp suite, i could see the majority of parameters were being parroted back from request -> response, the only parameters of real interest was the "Code" and the "Perms", as these were not in the request but were in the reponse, it also appeared to remain the same for this pdf over multiple requests/reponses.
 
 "code" must be used to decrypt the pdf in some way and perms must be a permission level.
 
