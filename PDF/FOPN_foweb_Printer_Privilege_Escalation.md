@@ -3,9 +3,13 @@
 
 I was reviewing a pdf with FOPN_foweb encryption, and wanted to see if i could increase privilages to remove encryption and decompress the file completely.
 
+```text
+Filter/FOPN_foweb/V 1
+```
+
 This type of encryption requires a addon to most pdf viewers which connects to the internet to review how and what privilages you have to the pdf file.
 
-I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
+Im only testing with the example document PDF, but I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
 
 monitoring the request response information in burp suite, i could see the majority of parameters were being parroted back from request too response, the only fields of real interest was the "Code=" and the Perms=, as these were not in the request but were in the reponse, it also appeared to remain the same for this file over multiple requests/reponses.
 
