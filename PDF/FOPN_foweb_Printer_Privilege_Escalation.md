@@ -39,7 +39,7 @@ def response(flow: http.HTTPFlow):
         data = data + "DocuId="+docuid+"&"    
         data = data + "Ident3Id=&"   
         data = data + "Ident4Id=&"   
-        data = data + "Perms=1&
+        data = data + "Perms=1&"
         data = data + "NotifyPrint=0&"                                                  
         data = data + "ServerSessionData=&"
         data = data + "DocumentSessionData="
