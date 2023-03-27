@@ -3,7 +3,7 @@
 
 ---
 
-### [General Stuff](https://wanatry.github.io/general/)
+### [General Pages](https://wanatry.github.io/general/)
 
 ### [HTB Pages](https://wanatry.github.io/HTB/)
 
