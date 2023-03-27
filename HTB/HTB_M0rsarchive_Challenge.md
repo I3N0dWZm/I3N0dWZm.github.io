@@ -1,6 +1,8 @@
 ### 01-03-23
 ### Hack The Box - M0rsarchive Challenge
 
+![alt text](https://wanatry.github.io/images/morse.jpg)
+
 Recently completed the M0rsarchive Challenge on HTB, this is a zip file with an image, the image uses morse code to display the password, each time you enter the password on the zip file and extract you are presented with another zip and image file and another and another. 
 
 I found i cracked it in a different way to others, I created a morse code image library, then chopped up each image to compare and output the password.
