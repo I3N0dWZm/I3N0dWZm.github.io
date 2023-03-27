@@ -1,4 +1,4 @@
-## HTB Stuff
+## HTB
 
 #### Hack the Box Notes:
 
