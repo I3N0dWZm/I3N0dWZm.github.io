@@ -1,14 +1,13 @@
 ### 01-03-23
 ### Hack The Box - M0rsarchive Challenge
 
-
 Recently completed the M0rsarchive Challenge on HTB, this is a zip file with an image, the image uses morse code to display the password, each time you enter the password on the zip file and extract you are presented with another zip and image file and another and another. 
 
-I found i cracked it in a different way to others, i created a morse code image libary, then chopped up each image to compare and output the password
+I found i cracked it in a different way to others, I created a morse code image library, then chopped up each image to compare and output the password.
 
-this involved two scripts and some manual updating of the libary (in the end!)
+this involved two scripts and some manual updating of the library (in the end!)
 
-the first script was a simple brute force script to attempt every combination and once succesful extract and zip and chop the images name them with the relivant number or character and add to the libary.I could see the password was increasing in complexity each time so this would have limited success but a good starting point.
+the first script was a simple brute force script to attempt every combination and once successful extract and zip and chop the images name them with the relevant number or character and add to the library could see the password was increasing in complexity each time so this would have limited success but a good starting point.
 
 ### brute_forcer.py
 ```python
@@ -105,18 +104,19 @@ this got me part way there, and i had a better understanding of what was require
 ---
 ### The second script
 
-The second script would attempt to crack the password by comparing the image segments against the existing libary created by the first script, 
-If match was not found for one of the segments it would output the image to a tmp directory and finish, 
-I would then manually check the images in the tmp directory update the filename and move it to the libary, then rerun.
-This took several retries to build up a full image libary, but was quite quick once completed. 
+The second script would attempt to crack the password by comparing the image segments against the existing library created by the first script, 
+If match was not found for one of the segments it would output the image to a temp directory and finish, 
+I would then manually check the images in the temp directory update the filename and move it to the library, then rerun.
+This took several retries to build up a full image library but was quite quick once completed. 
 
-The script has a few new features over the previous, such as checking each segment againt each item in the libary and an inverted version.
+The script has a few new features over the previous, such as checking each segment against each item in the library and an inverted version.
 
-It will change the colour space if the image is all black or all white when its converted to grayscale, sometimes the colors of the morse code are to close to the backround image, so it needed a fallback.
+It will change the colour space if the image is all black or all white when its converted to grayscale, sometimes the colors of the morse code are too close to the background image, so it needed a fallback.
 
-it will remove exisiting zip files, so it doesnt fill up the hard-drive.
+it will remove existing zip files, so it doesn’t fill up the hard-drive.
 
-TODO - The comparer function is not efficient - but does the job - the lookup libary should really be stored in memory only once.
+TODO - The comparer function is not efficient - but does the job - the lookup library should really be stored in memory only once.
+
 
 ### password_cracker.py
 ```python
