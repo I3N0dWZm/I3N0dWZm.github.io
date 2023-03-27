@@ -1,4 +1,4 @@
-## General Stuff 
+## General
 
 #### Projects and discoveries that may be interesting (or not)
 _______________________________________________________________
