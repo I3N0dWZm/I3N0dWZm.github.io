@@ -7,7 +7,7 @@ I found i cracked it in a different way to others, I created a morse code image 
 
 this involved two scripts and some manual updating of the library (in the end!)
 
-the first script was a simple brute force script to attempt every combination and once successful extract and zip and chop the images name them with the relevant number or character and add to the library could see the password was increasing in complexity each time so this would have limited success but a good starting point.
+the first script was a simple brute force script to attempt every combination and once successful extract and zip and chop the images, name them with the relevant number or character and add to the library could see the password was increasing in complexity each time so this would have limited success but a good starting point.
 
 ### brute_forcer.py
 ```python
