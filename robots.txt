@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /first_url/*
+Disallow: /images/*
+Disallow: /assets/*
+Disallow: /_layouts/*
+Disallow: /_includes/*
