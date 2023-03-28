@@ -3,9 +3,11 @@
 
 When looking for a callback in a program, i would go to the installation folder, but it has lots of dll's, exe, ini etc. below is how i would pinpoint the file(s) i want to look at.
 
-This small script will read any files in a given directory and look for the keyword provided in the lookup variable, the difference is that this will look for the keyword with 00 betwen each letter as well, which alot of dlls seem to encode strings with.
+This small script will read any file/s in a given directory and look for the keyword provided in the lookup variable, 
 
-example domainname = d o m a i n n a m e
+The difference is that this will look for the keyword with 00 (null) betwen each letter as well, which alot of dlls seem to encode strings with.
+
+example : domainname = d o m a i n n a m e
 
 ```python
 import glob
