@@ -11,5 +11,5 @@ _______________________________________________________________
 
 [Removing a Watermark](https://wanatry.github.io/PDF/Removing_watermarks.html)
 
-[FOPN_foweb Printer Privilege Escalation](https://wanatry.github.io/PDF/FOPN_foweb_Printer_Privilege_Escalation.html)
+[FOPN_foweb PDF Printer Privilege Escalation](https://wanatry.github.io/PDF/FOPN_foweb_Printer_Privilege_Escalation.html)
 
