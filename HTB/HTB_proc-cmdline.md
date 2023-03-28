@@ -8,7 +8,7 @@
 ```python
 import requests
 
-host = "test.htb"
+host = "test.htb/"
 path = host + "vurn.php?img=../../../../../../../../../"
 
 headers = {
