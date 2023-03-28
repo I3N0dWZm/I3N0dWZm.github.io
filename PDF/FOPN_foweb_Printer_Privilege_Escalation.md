@@ -7,26 +7,27 @@ I was reviewing a pdf with FOPN_foweb encryption, and wanted to see if i could i
 Filter/FOPN_foweb/V 1
 ```
 
-This type of encryption requires an addon to most pdf viewers which connects to the internet to send a response of what privileges are allowed to the pdf file.
+This type of encryption requires an addon to most pdf viewers which connects to the internet to send arequest and get a response of what privileges are allowed to the pdf file.
 
-Im only testing with the example document PDF, but I could quickly see that a man in the middle attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
+Im only testing with the example document PDF, but I could quickly see that a "man in the middle" attack was the best way foward to increase privileges on the printer rights to print to pdf thereby removing any encryption.
 
-Monitoring the request/response information in burp suite, i could see the majority of parameters were being parroted back from request -> response, the only parameters of real interest was the "Code" and the "Perms", as these were not in the request but were in the reponse, it also appeared to remain the same for this pdf over multiple requests/reponses.
+Monitoring the request/response information in burp suite, i could see the majority of parameters were being parroted back from request to response, the only parameters of interest was the "Code" and the "Perms", these were not in the request but were in the reponse, it also appeared to remain the same for this pdf over multiple requests/reponses.
 
-"code" must be used to decrypt the pdf in some way and perms must be a permission level.
+"code" must be used to decrypt the pdf in some way and "perms" must be a permission level.
 
-response when opening default example - installcomplete.pdf
-note - omited epoch timestamp
+Response example - installcomplete.pdf
+Note - omited epoch timestamp
+
 ```text
 Request=Setting = RetVal=Answer&Stamp=0000000000&StringFormat=ASCII&RequestSchema=Default
 Request=DocPerm = RetVal=Answer&Stamp=0000000000&ServId=InstallComplete&DocuId=D-700&Ident3ID=number3&Ident4ID=number4&Code=mnopq&Perms=105
 ```
 
-Plan of action - if i can re-send the code to open the file and change the perms field to increase privileges, i can then print.
+Plan of action - If i can re-send the code to open the file and change the perms field to increase privileges, i can then print.
 
 Using mitmproxy i was able to build a basic python script to intercept the requests (store the unique id codes) and modify the responses.
 
-I found running the script below with this command allowed me to increase privilege and print the pdf.
+I found running the script below with the following command allowed me to increase privilege and print the pdf, i had to modify my proxy setting to point 8079.
 
 ```text
 mitmweb -s filters.py --web-host 127.0.0.1 --web-port 8081  --listen-port 8079 --listen-host 127.0.0.1 --ssl-insecure
