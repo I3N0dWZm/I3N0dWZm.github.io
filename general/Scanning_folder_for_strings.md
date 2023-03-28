@@ -1,5 +1,5 @@
-#### 28-03-23
-#### Scanning files and sub folders for a keyword
+### 28-03-23
+### Scanning files and sub folders for a keyword
 
 When looking for a callback in a program, i would go to the installation folder, but it has lots of dll's, exe, ini etc. below is how i would pinpoint the file(s) i want to look at.
 
@@ -9,7 +9,7 @@ The difference is that this will look for the keyword with 00 (null) betwen each
 
 example : domainname = d o m a i n n a m e
 
-### folder_scanner.py
+#### folder_scanner.py
 ```python
 import glob
 import re
