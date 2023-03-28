@@ -9,6 +9,7 @@ The difference is that this will look for the keyword with 00 (null) betwen each
 
 example : domainname = d o m a i n n a m e
 
+### folder_scanner.py
 ```python
 import glob
 import re
