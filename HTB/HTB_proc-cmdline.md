@@ -1,7 +1,7 @@
 ### 20-03-23
 ### Hack The Box - path-traversal - enumuration over /proc/(number)/cmdline
 
-/proc/(number)/cmdline - this path can be very helpful wehn you havnt yet got terminal access to a box, it may be possible to see processes that are running on the box with local file inclusion if the vurnrability exists on the box.
+/proc/(number)/cmdline - this path can be very helpful when you haven’t yet got terminal access to a box, it may be possible to see processes that are running on the box with local file inclusion if the vulnerability exists on the box. 
   
 ### proc_cmdline.py
   
