@@ -16,8 +16,8 @@ lookup				= "domain/"
 ##############################################################
 lookup 				= lookup.encode('utf-8')
 hex_lookup 			= lookup.hex()
-hex_buf_lookup_tmp 	= re.findall('..',hex_lookup)
-hex_buf_lookup 		= '00'.join(hex_buf_lookup_tmp)
+hex_buf_lookup_tmp 		= re.findall('..',hex_lookup)
+hex_buf_lookup 			= '00'.join(hex_buf_lookup_tmp)
 ##############################################################
 print("Looking for: " + str(lookup))
 print("Looking for hex version: " + str(hex_lookup))
