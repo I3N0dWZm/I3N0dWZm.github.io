@@ -12,8 +12,8 @@ import glob
 import re
 import os
 
-def_path 			= "C:/folderpath/"
-lookup				= "domain/"
+def_path 			= "C:/folderpath/"	#change this
+lookup				= "domain.com/"		#change this
 ##############################################################
 lookup 				= lookup.encode('utf-8')
 hex_lookup 			= lookup.hex()
