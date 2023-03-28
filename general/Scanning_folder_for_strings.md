@@ -11,7 +11,7 @@ import glob
 import re
 import os
 
-def_path 			= "C:/ffolderpath/"
+def_path 			= "C:/folderpath/"
 lookup				= "domain/"
 ##############################################################
 lookup 				= lookup.encode('utf-8')
