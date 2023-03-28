@@ -1,9 +1,10 @@
 #### 28-03-23
 #### Scanning files and sub folders for a keyword
 
-When looking for a callback in a program, i go to the installation folder, but it has lots of dll's, exe, ini etc.
+When looking for a callback in a program, i would go to the installation folder, but it has lots of dll's, exe, ini etc. below is how i would pinpoint the file(s) i want to look at.
 
-This small script will read any files in a given directory and look for the lookup provided, the difference is that this will look for search with 00 betwen each letter, which alot of dlls seem to encode strings with.
+This small script will read any files in a given directory and look for the keyword provided in the lookup variable, the difference is that this will look for the keyword with 00 betwen each letter as well, which alot of dlls seem to encode strings with.
+
 example domainname = d o m a i n n a m e
 
 ```python
@@ -21,7 +22,7 @@ hex_buf_lookup 			= '00'.join(hex_buf_lookup_tmp)
 ##############################################################
 print("Looking for: " + str(lookup))
 print("Looking for hex version: " + str(hex_lookup))
-print("Looking for hex version with space (00): " + str(hex_buf_lookup))
+print("Looking for hex version with null space (00): " + str(hex_buf_lookup))
 print("----------------------------------------------")
 ##############################################################
 for item in glob.glob(def_path + '/**/**', recursive=True):
