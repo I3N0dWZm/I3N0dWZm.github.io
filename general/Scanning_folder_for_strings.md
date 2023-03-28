@@ -28,7 +28,7 @@ print("Looking for hex version: " + str(hex_lookup))
 print("Looking for hex version with null space (00): " + str(hex_buf_lookup))
 print("----------------------------------------------")
 ##############################################################
-for item in glob.glob(def_path + '/**/**', recursive=True):
+for item in glob.glob(def_path + '/**/*.*', recursive=True):
 	ok = 0
 	if os.path.isfile(item):
 		try:
