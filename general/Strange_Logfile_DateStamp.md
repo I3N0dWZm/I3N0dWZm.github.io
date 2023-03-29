@@ -8,9 +8,6 @@ The first part of this logfile was a datestamp but like nothing i had seen befor
 #### log.txt extract
 
 ```text
-‹D½b 65281
-×E½b 65282
-ÙE½b 65283
 bF½b 65286
 ÊO½b 65307
 YP½b 65300
