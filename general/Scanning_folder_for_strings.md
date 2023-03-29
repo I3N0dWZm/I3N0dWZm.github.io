@@ -7,7 +7,7 @@ This small script will read any file/s in a given directory and look for the key
 
 The difference is that this will look for the keyword with 00 (null) betwen each letter as well, which alot of dlls seem to encode strings with.
 
-example : domainname = d o m a i n n a m e
+example : domain/ = d o m a i n /
 
 #### folder_scanner.py
 ```python
