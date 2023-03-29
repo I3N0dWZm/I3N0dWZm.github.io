@@ -7,11 +7,8 @@ The first part of this logfile was a datestamp but like nothing i had seen befor
 
 #### log.txt extract
 
-```text
-bF½b 65286
-ÊO½b 65307
-YP½b 65300
-```
+#### goes here
+
 The python script below, opens the file as CP850 to avoid encoding issues, splits the data into a list, then reads each line
 
 I had to convert the datetime string to hex, split it into segments reverse the order then convert it to decimal to get this to display the correct epoch time.
