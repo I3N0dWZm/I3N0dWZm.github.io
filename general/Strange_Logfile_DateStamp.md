@@ -34,7 +34,7 @@ def get_file():
 	return datalist
 
 def convert_to_datestamp(string):
-	print (string)
+	#print (string)
 	try:
 		hexdata = (string.encode('CP850').hex())	
 		print(hexdata)
@@ -66,12 +66,10 @@ if __name__ == "__main__":
 #### Output
 
 ```text
-╩O¢b
 ca4fbd62
 62bd4fca
 1656573898
 2022-06-30 08:24:58
-YP¢b
 5950bd62
 62bd5059
 1656574041
