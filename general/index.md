@@ -8,3 +8,6 @@ _______________________________________________________________
 [Cheap CCTV is not a bargin](https://wanatry.github.io/general/Cheap_CCTV.html)
 
 [Scan folders/files (including dlls) for a string](https://wanatry.github.io/general/Scanning_folder_for_strings.html)
+
+[Strange logfile date stamp format](https://wanatry.github.io/general/Strange_Logfile_DateStamp.html)
+
