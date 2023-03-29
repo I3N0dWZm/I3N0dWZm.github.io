@@ -19,7 +19,7 @@ for i in range(len(pdf)):				#loop over pages
 		print(img)
 		xref 	= img[0]			#get ref
 		image 	= pdf.extract_image(xref)	#extract image
-		pix 	= fitz.Pixmap(pdf, xref)	#create pixel maps		
+		pix 	= fitz.Pixmap(pdf, xref)		#create pixel maps		
 		pix.save(workdir + str(count) + ".png")	#save pixel maps
 		print (workdir + str(count) + ".png")
 		count = count + 1
