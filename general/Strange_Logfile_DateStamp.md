@@ -1,4 +1,4 @@
-### 25-06-22
+### 25-06-30
 ### Strange Log File Datestamp
 
 When presented with a logfile with a very odd datetime stamp.
@@ -64,6 +64,7 @@ if __name__ == "__main__":
 	datalist = get_file()
 	data_dict = build_info_dict(datalist)
 ```
+
 
 #### Output
 
