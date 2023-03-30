@@ -10,3 +10,6 @@ _______________________________________________________________
 [Scan Folders/Files (including dlls) For a String](https://wanatry.github.io/general/Scanning_folder_for_strings.html)
 
 [Strange Logfile Date Stamp Format](https://wanatry.github.io/general/Strange_Logfile_DateStamp.html)
+
+[Windows 11 Bypass Hardware Checks](https://wanatry.github.io/general/Windows_11_Byass_Checks.html)
+
