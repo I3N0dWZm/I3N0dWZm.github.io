@@ -31,6 +31,7 @@ bash -p
 ls -la /opt/
 ls -la /home/<user>/
 ls -la /var/www/
+ls -la /etc/cron.d/
 ```
 #### Installed packages
 
@@ -45,7 +46,7 @@ ps -aux
 netstat -tulpn
 ```
 
-#### alternate way to check programs runing
+#### Alternate way to check programs runing
 
 ```bash
 #!/bin/bash
