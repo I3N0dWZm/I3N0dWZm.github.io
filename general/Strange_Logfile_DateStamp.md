@@ -1,5 +1,5 @@
 ### 25-06-30
-### Strange Log File Datestamp
+### Strange Log File Date Stamp
 
 When presented with a logfile with a very odd datetime stamp.
 
