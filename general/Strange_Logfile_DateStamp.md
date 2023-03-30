@@ -7,7 +7,11 @@ The first part of this logfile was a datestamp but like nothing i had seen befor
 
 #### log.txt extract
 
-#### goes here
+```text
+bF½b 65286
+ÊO½b 65307
+YP½b 65300
+```
 
 The python script below, opens the file as CP850 to avoid encoding issues, splits the data into a list, then reads each line
 
