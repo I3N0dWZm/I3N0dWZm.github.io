@@ -12,3 +12,6 @@ _______________________________________________________________
 [HTB Path Traversal - py script](https://wanatry.github.io/HTB/HTB_path-traversal.html)
 
 [HTB Path Traversal /proc/(number)/cmdline - py script](https://wanatry.github.io/HTB/HTB_proc-cmdline.html)
+
+[HTB upgrade shell with python](https://wanatry.github.io/HTB/HTB_upgrade_shell.html)
+
