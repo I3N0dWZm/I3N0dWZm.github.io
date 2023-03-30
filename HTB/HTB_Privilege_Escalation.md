@@ -1,10 +1,10 @@
 ### Hack The Box - Privilege Escalation - RECON
 ### 30-03-23
 
-Starting point for privilege escalation on a linux system.
+Starting point for privilege escalation on a linux system. Attempting to find a potential weakness anywhere.
 
 
-### Special permission on the account/groups?
+#### Special permission on the account/groups?
 
 ```text
 id
