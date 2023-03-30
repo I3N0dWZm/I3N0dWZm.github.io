@@ -8,9 +8,11 @@ Run as reg as admin rights to bypass windows 11 hardware checks, if the pc can r
 ```text
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+"BypassCPUCheck"=dword:00000001
 "BypassTPMCheck"=dword:00000001
-"BypassSecureBootCheck"=dword:00000001
 "BypassRAMCheck"=dword:00000001
+"BypassSecureBootCheck"=dword:00000001
+"BypassStorageCheck"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
