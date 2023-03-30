@@ -1,4 +1,4 @@
-### Hack The Box - Privilege Escalation
+### Hack The Box - Privilege Escalation - RECON
 ### 30-03-23
 
 Starting point for privilege escalation on a linux system.
@@ -32,3 +32,9 @@ ls -la /opt/
 ls -la /home/<user>/
 ls -la /var/www/
 ```
+#### Installed packages
+
+```text
+grep installed /var/log/dpkg.log
+```
+
