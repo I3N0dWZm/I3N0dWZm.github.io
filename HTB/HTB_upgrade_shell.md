@@ -1,4 +1,4 @@
-### HTB Upgrade Shell with python
+### Hack The Box - Upgrade Shell with python
 ### 30-03-23
 
 I forget this every time i get basic terminal connection to a linux system.
