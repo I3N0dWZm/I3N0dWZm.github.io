@@ -3,11 +3,9 @@
 
 Run as reg as admin rights to bypass windows 11 hardware checks, if the pc can run windows 10 fine it can run windows 11. 
 
+### bypass.reg
 
-regedit bypass.reg
-
-bypass.reg
-
+```text
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
 "BypassTPMCheck"=dword:00000001
@@ -16,4 +14,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
+```
 
+### Run in cmd prompt
+
+```text
+regedit bypass.reg
+```text
