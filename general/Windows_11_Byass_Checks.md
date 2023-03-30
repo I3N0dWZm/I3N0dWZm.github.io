@@ -1,7 +1,7 @@
 ### Windows 11 Bypass Checks
 ### 30-03-23
 
-Run as reg as admin rights to bypass windows 11 hardware checks, 
+Run this reg as admin rights, to bypass windows 11 hardware checks, 
 
 For the most part if the PC can run windows 10 fine it can run windows 11. 
 
