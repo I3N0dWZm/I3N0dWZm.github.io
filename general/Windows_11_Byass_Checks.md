@@ -20,4 +20,4 @@ Windows Registry Editor Version 5.00
 
 ```text
 regedit bypass.reg
-```text
+```
