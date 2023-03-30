@@ -38,3 +38,33 @@ ls -la /var/www/
 grep installed /var/log/dpkg.log
 ```
 
+#### Check ports and programs running
+
+```text
+ps -aux
+netstat -tulpn
+```
+
+#### alternate way to check programs runing
+
+```bash
+#!/bin/bash
+x=1
+while [ $x -le 10000 ]
+do
+  if [ -d /proc/$x ] 
+  then
+    echo $x
+	a='/proc/'
+	b='/cmdline'
+    filename=$a$x$b
+	#echo $filename
+    cat $filename
+  fi
+  x=$(( $x + 1 ))
+done
+```
+
+
+
+
