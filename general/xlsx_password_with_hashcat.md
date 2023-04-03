@@ -24,7 +24,7 @@ Then i had to modify the string (remove the filename at the start) and save it t
 ```text
 $office$*2013*100000*256*16*b36ceb903059d6b81cef6ef491f33043*e0449ab8cfb2b2c17bea6760218e262a*06911117dff58728126891ad908060556764c189940371d7f5d92ae9037589f9
 ```
-Even though this was generated in office 365 the password extraction appears to be 2013.
+Even though this was generated in office 365 the hash extraction algorithm appears to be office 2013.
 
 https://hashcat.net/wiki/doku.php?id=example_hashes
 
