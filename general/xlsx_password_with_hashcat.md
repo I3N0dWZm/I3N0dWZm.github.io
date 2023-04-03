@@ -3,9 +3,9 @@
 
 I had to crack a password on a spreadsheet(xlsx file), previoculy when i needed to do this i was abl to open the file in libre office, but this bypass no longer worked.
 
-i saw john the ripper offered some python code to output the hash with "office2john.py", running it was a bit more of a challange as it only appeared to work with python2.7.
+I saw john the ripper offered some python code to output the hash with "office2john.py", running it was a bit more of a challenge, it only appeared to work with python2.7.
 
-so i installed a copy of python 2.7 to a sepearte folder and run the following
+So i installed a copy of python 2.7 to a seperate folder and run the following
 
 #### Get Hash
 ```text
