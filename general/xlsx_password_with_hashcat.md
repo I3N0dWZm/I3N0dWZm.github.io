@@ -30,10 +30,10 @@ https://hashcat.net/wiki/doku.php?id=example_hashes
 
 Looking at the above webpage i could see this would be code 9600.
 
-9400 - office 2007
-9500 - office 2010
-9600 - office 2013
-25300 - office 2016
+9400 - office 2007.
+9500 - office 2010.
+9600 - office 2013.
+25300 - office 2016.
 
 ```text
 hashcat -a 0 -m 9600 xslx.txt rockyou.txt
