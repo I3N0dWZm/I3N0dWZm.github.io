@@ -1,7 +1,7 @@
 ### 03-04-23
 ### XLSX password crack with Hashcat
 
-I had to crack a password on a spreadsheet(xlsx file), previoculy when i needed to do this i was abl to open the file in libre office, but this bypass no longer worked.
+I had to crack a password on a spreadsheet(xlsx file), previously when i needed to do this i was able to open the file in libre office, but this bypass no longer worked.
 
 I saw john the ripper offered some python code to output the hash with "office2john.py", running it was a bit more of a challenge, it only appeared to work with python2.7.
 
