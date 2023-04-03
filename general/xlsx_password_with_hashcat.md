@@ -38,7 +38,7 @@ Looking at the above webpage i could see this would be code 9600.
 ```text
 hashcat -a 0 -m 9600 xslx.txt rockyou.txt
 ```
-cracked in about 15 seconds
+Cracked in about 15 seconds
 
 ```text
 $office$*2013*100000*256*16*b36ceb903059d6b81cef6ef491f33043*e0449ab8cfb2b2c17bea6760218e262a*06911117dff58728126891ad908060556764c189940371d7f5d92ae9037589f9:12345
