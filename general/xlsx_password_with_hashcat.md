@@ -27,6 +27,9 @@ $office$*2013*100000*256*16*b36ceb903059d6b81cef6ef491f33043*e0449ab8cfb2b2c17be
 even though this was generated in office 365 the password extraction appears to be 2013.
 
 https://hashcat.net/wiki/doku.php?id=example_hashes
+
+Looking at the above webpage i could see this would be code 9600.
+
 9400 - office 2007
 9500 - office 2010
 9600 - office 2013
