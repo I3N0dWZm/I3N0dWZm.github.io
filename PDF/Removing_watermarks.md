@@ -1,5 +1,5 @@
-### 17-11-21
 ### PDF Manipulation - Removing a watermark
+### 17-11-21
 
 first run the following command on the pdf to uncompress the file.
 
