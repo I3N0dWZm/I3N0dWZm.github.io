@@ -3,9 +3,9 @@
 
 How to slowly roll back the 'MaximumPasswordAge' in the windows password policy, so that users are not affected?
 
-After being forced to extend the 'MaximumPasswordAge' during lockdown we are in a situation where we need to roll it back again but with effecting day to day users
+After being forced to extend the 'MaximumPasswordAge' during lockdown we are in a situation where we need to roll it back again but without effecting day to day users.
 
-the following solution is written in python and will be set in task scheduler to run once or twice a week to reduce the 'MaximumPasswordAge' by 2 days each time, until it has hit the preferred max age (set in the example as 128)
+The following solution is written in python and will be set in "task scheduler" to run once or twice a week to reduce the 'MaximumPasswordAge' by 2 days each time, until it has hit the preferred max age (set in the example as 128)
 
 ```python
 import codecs
