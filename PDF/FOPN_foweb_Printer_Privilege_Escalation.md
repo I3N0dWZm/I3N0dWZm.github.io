@@ -1,5 +1,5 @@
-### 02-12-22
 ### FOPN foweb encrypted PDF - Printer Privilege Escalation
+### 02-12-22
 
 I was reviewing a pdf with FOPN_foweb encryption, and wanted to see if i could increase privileges to remove encryption and decompress the file completely.
 
