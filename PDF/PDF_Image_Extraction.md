@@ -1,5 +1,5 @@
-### 29-03-23
 ### PDF Manipulation - Image Extraction
+### 29-03-23
 
 Image extraction script using mupdf/fitz. as pypdf no longer seems to work (for me anyway).
 
