@@ -5,13 +5,15 @@ How to slowly roll back the 'MaximumPasswordAge' in the windows password policy,
 
 After being forced to extend the 'MaximumPasswordAge' during lockdown we are in a situation where we need to roll it back again but without effecting day to day users.
 
-The following solution is written in python and will be set in "task scheduler" to run once or twice a week to reduce the 'MaximumPasswordAge' by 2 days each time, until it has hit the preferred max age (set in the example as 128)
+The following solution is written in python and will be set in "task scheduler" to run once or twice a week to reduce the 'MaximumPasswordAge' by 2 days each time, until it has hit the preferred max age (set in the example as 128).
+
+The path variable needs to be the location of the password policy (group policy), probably in C:\Windows\SYSVOL somewhere.
 
 ```python
 import codecs
 
-path 				= "//path/Policies/{99999999-9999-9999-9999-99999999}/MACHINE/Microsoft/Windows NT/SecEdit/"
-filename 			= "GptTmpl.inf"
+path 		= "//path/Policies/{99999999-9999-9999-9999-99999999}/MACHINE/Microsoft/Windows NT/SecEdit/"
+filename 	= "GptTmpl.inf"
 
 def get_file_data():#readfile as unicode
 	data = []
