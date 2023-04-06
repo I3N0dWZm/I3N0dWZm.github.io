@@ -37,7 +37,7 @@ def worker(data):
 			maxage = line.replace("\r\n","").split (" = ")
 			print (maxage)
 			print("Old Max Age : " + line)
-			int_maxage 			= int(maxage[1])
+			int_maxage 		= int(maxage[1])
 			new_max_age 		= int_maxage -2
 			new_max_age_line 	= "MaximumPasswordAge = " + str(new_max_age) + "\r\n"
 			print("New Max Age : " + new_max_age_line)
