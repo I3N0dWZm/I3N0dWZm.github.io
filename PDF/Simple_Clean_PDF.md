@@ -1,6 +1,5 @@
-### 04-10-21
 ### PDF Manipulation - Clean PDF before processing
-
+### 04-10-21
 
 When i was dealing with inconsistant results from processing incoming pdfs from different suppliers, this is the most simple method i could find to standardize PDFs before processing.
 
