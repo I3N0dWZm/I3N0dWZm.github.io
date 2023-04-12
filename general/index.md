@@ -16,3 +16,5 @@ _______________________________________________________________
 [XLSX file password hash - Crack with Hashcat](https://wanatry.github.io/general/xlsx_password_with_hashcat.html)
 
 [Rollback the MaximumPasswordAge Gradually](https://wanatry.github.io/general/rollback_max_age_password.html)
+
+[Shrink an MP4 filesize with ffmpeg](https://wanatry.github.io/general/shrink_mp4.html)
