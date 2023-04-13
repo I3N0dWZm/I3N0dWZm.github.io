@@ -5,7 +5,7 @@ I was running a nessus scan and came upon a CCTV system, it was alowing path tra
 
 Even worse is the root password was DES encrypted
 
-![cheap_cctv_exploit](https://wanatry.github.io/images/1_cheap_cctv.png)
+![cheap_cctv_exploit](https://i3n0dwzm.github.io/images/1_cheap_cctv.png)
 
 http not https, path traversal, passwd file viewable, weak encryption, but is the root password easy to guess? 
 
