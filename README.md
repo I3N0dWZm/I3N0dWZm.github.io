@@ -3,8 +3,8 @@
 
 ---
 
-### [General Pages](https://wanatry.github.io/general/)
+### [General Pages](https://i3n0dwzm.github.io/general/)
 
-### [HTB Pages](https://wanatry.github.io/HTB/)
+### [HTB Pages](https://i3n0dwzm.github.io/HTB/)
 
-### [PDF Manipulation Pages](https://wanatry.github.io/PDF/)
+### [PDF Manipulation Pages](https://i3n0dwzm.github.io/PDF/)
