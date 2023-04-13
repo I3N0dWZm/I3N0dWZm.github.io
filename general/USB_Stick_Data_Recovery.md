@@ -9,9 +9,9 @@ these files made it difficult to do anything with the USB stick as they had abso
 
 Extract from terminal view of listing the usb stick.
 
-![alt text](https://wanatry.github.io/images/1_usb_stick.jpg)
+![alt text](https://i3n0dwzm.github.io/images/1_usb_stick.jpg)
 
-![alt text](https://wanatry.github.io/images/2_usb_stick.jpg)
+![alt text](https://i3n0dwzm.github.io/images/2_usb_stick.jpg)
 
 As you can see these file format looked odd and some were 1gb or more!.
 
@@ -52,5 +52,5 @@ for f in glob.glob('/media/kali/0312-74C3/**/*.*', recursive=True):
 
 Shortly after recovering the files the usb stick completely failed.
 
-![alt text](https://wanatry.github.io/images/3_usb_stick.jpg)
+![alt text](https://i3n0dwzm.github.io/images/3_usb_stick.jpg)
 
