@@ -15,3 +15,4 @@ _______________________________________________________________
 
 [HTB Upgrade Shell With Python](https://i3n0dwzm.github.io/HTB/HTB_upgrade_shell.html)
 
+[HTB Helpful Web Pages](https://i3n0dwzm.github.io/HTB/HTB_HelpfulPages.html)
