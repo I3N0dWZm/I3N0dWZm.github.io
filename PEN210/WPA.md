@@ -80,10 +80,13 @@ hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 
 hashcat -m 22000 hc2200.txt rockyou.txt
 ```
+```text
+john --wordlist=rockyou.txt --format=wpapsk hc2200.txt 
+```
 
 
 
-
+https://charlesreid1.com/wiki/John_the_Ripper/WPA
 https://hashcat.net/wiki/doku.php?id=cracking_wpawpa2
 
 
