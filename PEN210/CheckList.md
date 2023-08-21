@@ -17,6 +17,9 @@ locate aireplay-ng
 locate hashcat
 locate john
 locate rockyou.txt
+locate password.lst
+locate wordlists
+locate seclists
 
 locate tshark
 locate hcxpcapngtool
