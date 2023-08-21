@@ -19,7 +19,6 @@ sudo iw wlan0 scan | grep SSID
 ```text
 #######DIDNT WORK##########
 wpa_passphrase ESSID > /etc/wpa_supplicant/wpa_supplicant.conf
-wpa_passphrase BOOKERBEST_GUEST > /etc/wpa_supplicant/wpa_supplicant.conf
 ###########################
 ```
 
@@ -30,7 +29,7 @@ Device 'wlan0' successfully activated with '5108ff5b-9e24-46a0-8991-c76c985aba80
 ```
 
 ```text
-sudo nmcli dev wifi connect BOOKERBEST_GUEST password <password> 
+sudo nmcli dev wifi connect LINKSYS password <password> 
 ```
 ```text
 curl http://192.168.1.1/proof.txt  
