@@ -5,7 +5,7 @@
 ```text
 ip a
 iw dev
-```text
+```
 
 ```text
 locate rockyou.txt
