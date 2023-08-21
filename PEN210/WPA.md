@@ -1,3 +1,5 @@
+## WPA/WPA2
+
 ### Normal setup
 
 ```text
