@@ -87,7 +87,7 @@ or ...
 hcxhash2cap --hccapx=linksys.hccapx -c out.cap
 hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 hashcat -m 22000 hash.hc22000 /usr/share/john/password.lst
-```text
+```
 
 
 
