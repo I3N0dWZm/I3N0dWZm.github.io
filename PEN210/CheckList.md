@@ -17,4 +17,6 @@ locate hashcat
 locate john
 locate cruncher
 locate tshark
+locate hcxpcapngtool
+locate cap2hccap.bin
 ```
