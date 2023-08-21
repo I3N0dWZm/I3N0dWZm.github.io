@@ -13,11 +13,17 @@ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
 
 At this point we know the following about our target AP:
 
+
 It has an ESSID of linksys
+
 It has a BSSID of 11:22:33:44:55:66
+
 It uses WPA2 (TKIP/CCMP) (and probably WPA (TKIP/CCMP))
+
 It uses a auth of PSK
+
 It runs on channel 1
+
 
 #### Create Configuration file
 ```text
@@ -43,6 +49,7 @@ sudo hostapd-mana linksys-mana.conf
 ```
 
 Wait for Captured a WPA/2 handshake in output
+
 
 #### Crack!
 ```text
