@@ -9,7 +9,7 @@ sudo iw dev
 
 ```text
 sudo ip link set wlan0 down
-iw dev wlan0 interface add wlan0mon type monitor
+sudo iw dev wlan0 interface add wlan0mon type monitor
 sudo ip link set wlan0mon up					            
 ```
 
