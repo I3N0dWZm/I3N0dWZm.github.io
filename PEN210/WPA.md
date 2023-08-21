@@ -18,7 +18,7 @@ sudo ip link set wlan0mon up
 iw wlan0mon set channel 7
 ```
 
-### Check for networks with WPA available
+### Check for networks with WPA available (normally WPA CCNP)
 ```text
 sudo airodump-ng wlan0mon
 ```
