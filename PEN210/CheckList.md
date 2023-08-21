@@ -14,6 +14,7 @@ which airodump-ng
 which aircrack-ng
 which aireplay-ng
 
+locate hostapd-mana
 locate hashcat
 locate john
 locate rockyou.txt
