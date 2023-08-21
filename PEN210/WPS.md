@@ -4,9 +4,13 @@
 sudo systemctl stop NetworkManager
 sudo airmon-ng check kill
 sudo iw dev
+```
+#### Create Monitor Mode Device
+
+```text
 sudo ip link set wlan0 down
-sudo iw wlan0 set monitor control
-sudo ip link set wlan0 up
+iw dev wlan0 interface add wlan0mon type monitor
+sudo ip link set wlan0mon up					            
 ```
 
 ### Check for networks with wps available
