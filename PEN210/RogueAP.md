@@ -34,7 +34,7 @@ ssid=linksys
 channel=1
 hw_mode=g
 ieee80211n=1
-wpa=3
+wpa=2
 wpa_key_mgmt=WPA-PSK
 wpa_passphrase=ANYPASSWORD
 wpa_pairwise=TKIP CCMP
@@ -48,7 +48,7 @@ sudo ip link set wlan0 up
 sudo hostapd-mana linksys-mana.conf
 ```
 
-Wait for Captured a WPA/2 handshake in output
+Wait for a capture of a WPA/2 handshake in output
 
 
 #### Crack!
