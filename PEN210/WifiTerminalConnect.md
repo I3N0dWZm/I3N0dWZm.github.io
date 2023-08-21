@@ -1,3 +1,5 @@
+## Connect to Wifi from Terminal and get proof.txt
+
 ### Check for wifi dev (get id)
 ```text
 iwconfig
@@ -8,7 +10,7 @@ iwconfig
 sudo ifconfig wlan0 up 
 ```
 
-# Get ESSID's 
+### Get ESSID's 
 ```text
 iwlist wlan0 scanning
 OR
