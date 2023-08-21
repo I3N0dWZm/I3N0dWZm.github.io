@@ -77,10 +77,13 @@ aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
 
 ```text
 hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
-
 hashcat -m 22000 hc2200.txt rockyou.txt
 ```
+
+#### or ....
+
 ```text
+hccap2john out.cap > hc2200.txt
 john --wordlist=rockyou.txt --format=wpapsk hc2200.txt 
 ```
 
