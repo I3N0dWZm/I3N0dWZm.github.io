@@ -5,6 +5,23 @@ sudo apt install hostapd-mana
 sudo apt-get install libssl-dev
 ```
 
+A network card with interface modes "AP mode" is requred or the config will fail
+```text
+iw list | grep "Supported interface modes" -A 8
+
+        Supported interface modes:
+                 * IBSS
+                 * managed
+                 * AP
+                 * AP/VLAN
+                 * monitor
+                 * mesh point
+
+
+```
+
+
+
 ```text
 sudo airodump-ng wlan0mon
 
@@ -50,6 +67,7 @@ We will set the wpa parameter to the integer "3" to enable both WPA and WPA2 (se
 #### Start Access Point
 ```text
 
+sudo systemctl disable dnsmasq && sudo systemctl disable hostapd
 sudo rfkill unblock wifi
 sudo rfkill unblock all
 sudo airmon-ng check kill
