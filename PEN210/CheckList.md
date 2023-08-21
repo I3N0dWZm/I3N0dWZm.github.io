@@ -10,9 +10,9 @@ iw dev
 
 #### Programs
 ```text
-locate airodump-ng
-locate aircrack-ng
-locate aireplay-ng
+which airodump-ng
+which aircrack-ng
+which aireplay-ng
 
 locate hashcat
 locate john
