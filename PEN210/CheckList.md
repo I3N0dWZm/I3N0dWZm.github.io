@@ -1,6 +1,6 @@
 ### Check List
 
-#### Check the enviroment - whats available
+#### Check The Enviroment - Whats Available!
 
 #### Network
 ```text
