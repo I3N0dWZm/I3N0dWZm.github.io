@@ -15,7 +15,7 @@ sudo ip link set wlan0mon up
 
 ### Check for networks with wps available
 ```text
-wash -i wlan0mon
+sudo wash -i wlan0mon
 ```
 
 ```text
