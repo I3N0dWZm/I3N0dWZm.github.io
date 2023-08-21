@@ -21,9 +21,11 @@ locate password.lst
 locate wordlists
 locate seclists
 
-locate tshark
+which genpmk
+which cowpatty
+which tshark
+which rsmangler
+which crunch
 locate hcxpcapngtool
 locate cap2hccap.bin
-locate rsmangler
-locate crunch
 ```
