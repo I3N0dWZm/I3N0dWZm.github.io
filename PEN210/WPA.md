@@ -89,7 +89,13 @@ hccap2john out.cap > hc2200.txt
 john --wordlist=rockyou.txt --format=wpapsk hc2200.txt 
 ```
 
+#### or ....
 
+create a rainbow table and crack with that!
+```text
+genpmk -f <wordlist> -d precomputed-common -s home
+cowpatty -d precomputed-common -s <ESSID> -r out.cap
+```
 
 https://charlesreid1.com/wiki/John_the_Ripper/WPA
 https://hashcat.net/wiki/doku.php?id=cracking_wpawpa2
