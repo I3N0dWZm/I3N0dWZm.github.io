@@ -91,3 +91,10 @@ hashcat -m 22000 hash.hc22000 /usr/share/john/password.lst
 
 
 
+https://wiki.gentoo.org/wiki/Hostapd
+
+https://tbhaxor.com/evil-twin-wifi-network-using-hostapd-mana/
+
+
+
+
