@@ -13,7 +13,7 @@ sudo iw dev wlan0 interface add wlan0mon type monitor
 sudo ip link set wlan0mon up					            
 ```
 
-### Check for networks with wps available
+### Check for networks with WPS available
 ```text
 sudo wash -i wlan0mon
 ```
