@@ -6,7 +6,7 @@
 sudo iw list
 ```
 
-### set country (to allow the power change)
+### Set country (to allow the power change)
 ```text
 sudo iw reg get
 sudo iw reg set BZ
