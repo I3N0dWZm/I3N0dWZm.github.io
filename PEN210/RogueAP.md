@@ -5,7 +5,7 @@ sudo apt install hostapd-mana
 sudo apt-get install libssl-dev
 ```
 
-A network card with interface modes "AP mode" is requred or the config will fail
+### Note - A network card with interface modes "AP mode" is requred or the config will fail
 ```text
 iw list | grep "Supported interface modes" -A 8
 
@@ -16,11 +16,7 @@ iw list | grep "Supported interface modes" -A 8
                  * AP/VLAN
                  * monitor
                  * mesh point
-
-
 ```
-
-
 
 ```text
 sudo airodump-ng wlan0mon
