@@ -71,6 +71,11 @@ aircrack-ng -a2 -b 10:27:F5:66:BE:27 -w rockyou.txt out.cap
 #### Or a faster way to crack
 
 ```text
+22000 | WPA-PBKDF2-PMKID+EAPOL
+22001 | WPA-PMK-PMKID+EAPOL
+```
+
+```text
 hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 
 hashcat -m 22000 hc2200.txt rockyou.txt
@@ -79,7 +84,7 @@ hashcat -m 22000 hc2200.txt rockyou.txt
 
 
 
-
+https://hashcat.net/wiki/doku.php?id=cracking_wpawpa2
 
 
 
