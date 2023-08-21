@@ -21,6 +21,8 @@ locate password.lst
 locate wordlists
 locate seclists
 
+which nmcli
+which wpa_passphrase
 which genpmk
 which cowpatty
 which tshark
