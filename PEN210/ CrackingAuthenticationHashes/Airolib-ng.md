@@ -18,14 +18,19 @@ import passwords
 ```text
 airolib-ng wifu.sqlite --import passwd /usr/share/john/password.lst
 airolib-ng wifu.sqlite --import passwd rockyou.txt
+airolib-ng wifu.sqlite --import passwd /usr/share/seclists/Passwords/xato-net-10-million-passwords.txt
+```
+
+process
+```text
+airolib-ng wifu.sqlite --batch
 ```
 check if all processed
 ```text
-airolib-ng wifu.sqlite --batch
 airolib-ng wifu.sqlite --stats
 ```
 
 ## crack - 23,000 per second!
 ```text
-aircrack-ng -r wifu.sqlite wpa1-01.cap
+aircrack-ng -r wifu.sqlite out.cap
 ```
