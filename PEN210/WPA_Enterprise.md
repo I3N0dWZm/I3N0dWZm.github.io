@@ -89,7 +89,7 @@ nano /etc/hostapd-mana/mana.eap_user
 ```
 
 
-### start the AP with certificate
+### Start the AP with certificate
 ```text
 sudo hostapd-mana /etc/hostapd-mana/mana.conf
 ```
