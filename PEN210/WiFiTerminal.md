@@ -1,5 +1,12 @@
 ## Connect to Wifi from Terminal and get proof.txt
 
+
+### Start Netowrk manager if needed
+```text
+sudo service NetworkManager start
+sudo systemctl start NetworkManager
+```
+
 ### Check for wifi dev (get id)
 ```text
 iwconfig
@@ -22,6 +29,8 @@ wpa_passphrase ESSID > /etc/wpa_supplicant/wpa_supplicant.conf
 ###########################
 ```
 
+### Connect
+
 ```text
 sudo nmcli --ask dev wifi connect LINKSYS
 Password: ••••••••••••••••
@@ -34,5 +43,15 @@ sudo nmcli dev wifi connect LINKSYS password <password>
 ```text
 curl http://192.168.1.1/proof.txt  
 ```
+
+
+### Delete Connection
+```text
+sudo nmcli
+sudo nmcli c delete LINKSYS
+```
+
+
+
 
 
