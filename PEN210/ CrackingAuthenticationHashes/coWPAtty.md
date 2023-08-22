@@ -20,12 +20,12 @@ genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu
 sudo cowpatty -r out.cap -d wifuhashes -s wifu
 ```
 
-### without pre-computing - 880 a second!
+### Without pre-computing - 880 a second!
 ```text
 sudo cowpatty -r out.cap -f /usr/share/john/password.lst -s wifu
 ```
 
-### without pre-computing - aircrack is faster - 2000 a second!
+### Without pre-computing - aircrack is faster - 2000 a second!
 ```text
 sudo aircrack-ng -s wifu -w /usr/share/john/password.lst out.cap
 sudo aircrack-ng -s wifu -w /usr/share/seclists/Passwords/xato-net-10-million-passwords.txtt out.cap
