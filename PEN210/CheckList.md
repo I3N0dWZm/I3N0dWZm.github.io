@@ -22,6 +22,7 @@ locate password.lst
 locate wordlists
 locate seclists
 
+which macchanger
 which nmcli
 which wpa_passphrase
 which genpmk
