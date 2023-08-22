@@ -2,7 +2,7 @@
 
 Pre compute hashes - rainbow tables
 
-### create pre-compute file
+### Create pre-compute file
 
 ```text
 genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu
