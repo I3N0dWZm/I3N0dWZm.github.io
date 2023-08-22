@@ -1,7 +1,7 @@
 ## Connect to Wifi from Terminal and get proof.txt
 
 
-### Start Netowrk manager if needed
+### Start Network manager (if needed)
 ```text
 sudo service NetworkManager start
 sudo systemctl start NetworkManager
