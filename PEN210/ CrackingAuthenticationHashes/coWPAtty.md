@@ -17,7 +17,7 @@ genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu
 
 ### Lets get cracking - 55,000 a second!
 ```text
-cowpatty -r wpajohn-01.cap -d wifuhashes -s wifu
+cowpatty -r out.cap -d wifuhashes -s wifu
 
 
 ```
