@@ -55,7 +55,26 @@ or...
 sudo nmcli c delete LINKSYS
 ```
 
+## PEN 210 Recommended Version
 
+### Create config file
+```text
+nano wifi-client.conf
+```
+```text
+network={
+  ssid="home_network"
+  scan_ssid=1
+  psk="password123"
+  key_mgmt=WPA-PSK
+}
+```
 
+### Connect
+```text
+sudo wpa_supplicant -i wlan0 -c wifi-client.conf
+sudo dhclient wlan0
+ip a
+```
 
 
