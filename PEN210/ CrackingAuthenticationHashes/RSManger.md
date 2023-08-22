@@ -30,6 +30,18 @@ bcd123
 ```text
 rsmangler --file wordlist.txt --min 12 --max 13 --output mangled.txt 	
 ```
+```text
+adminbirdcat
+birdcatadmin
+adminbirddog
+birddogadmin
+.....
+122dogcatbird
+dogcatbird122
+123dogcatbird
+dogcatbird123
+```
+
 
 #### piping it to aircrack - note no output used
 ```text
