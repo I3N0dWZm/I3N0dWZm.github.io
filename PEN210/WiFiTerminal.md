@@ -48,6 +48,10 @@ curl http://192.168.1.1/proof.txt
 ### Delete Connection
 ```text
 sudo nmcli
+sudo nmcli connection delete LINKSYS
+
+or...
+
 sudo nmcli c delete LINKSYS
 ```
 
