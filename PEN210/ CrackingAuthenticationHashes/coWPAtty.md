@@ -2,8 +2,8 @@
 
 Pre compute hashes - rainbow tables
 
+### create pre-compute file
 
-We run genpmk with -f to define our wordlist, -d to output to a file, and -s to specify the ESSID.
 ```text
 genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu
 
@@ -15,7 +15,7 @@ genpmk -f /usr/share/john/password.lst -d wifuhashes -s wifu
 -V 	Print program version and exit
 ```
 
-
+### Lets get cracking - 55,000 a second!
 ```text
 cowpatty -r wpajohn-01.cap -d wifuhashes -s wifu
 
