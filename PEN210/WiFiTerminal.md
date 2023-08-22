@@ -67,6 +67,7 @@ network={
   scan_ssid=1
   psk="password123"
   key_mgmt=WPA-PSK
+  pairwise=CCMP
 }
 ```
 
