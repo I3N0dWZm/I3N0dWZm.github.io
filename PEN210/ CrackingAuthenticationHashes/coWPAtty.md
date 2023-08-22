@@ -28,5 +28,5 @@ sudo cowpatty -r out.cap -f /usr/share/john/password.lst -s wifu
 ### Without pre-computing - aircrack is faster - 2000 a second!
 ```text
 sudo aircrack-ng -s wifu -w /usr/share/john/password.lst out.cap
-sudo aircrack-ng -s wifu -w /usr/share/seclists/Passwords/xato-net-10-million-passwords.txtt out.cap
+sudo aircrack-ng -s wifu -w /usr/share/seclists/Passwords/xato-net-10-million-passwords.txt out.cap
 ```
