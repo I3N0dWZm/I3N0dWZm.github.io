@@ -7,7 +7,8 @@ sudo airodump-ng wlan0mon
 BSSID              PWR Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
 FC:EC:DA:8F:2E:90  -40     639       19    1   2  300. WPA2 CCMP   MGT  Playtronics
 ```
-
+MGT, meaning WPA Enterprise
+ 
 ### To mimick this AP
 
 ### Setup Certificates
