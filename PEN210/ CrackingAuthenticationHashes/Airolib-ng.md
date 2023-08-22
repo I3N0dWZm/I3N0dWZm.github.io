@@ -30,7 +30,7 @@ check if all processed
 airolib-ng wifu.sqlite --stats
 ```
 
-## crack - 23,000 per second!
+## crack - 33,000 per second!
 ```text
 aircrack-ng -r wifu.sqlite out.cap
 ```
