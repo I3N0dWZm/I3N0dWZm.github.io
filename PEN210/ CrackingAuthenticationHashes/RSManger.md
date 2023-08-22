@@ -13,6 +13,18 @@ dog
 ```text
 rsmangler --file wordlist.txt --output mangled.txt 				
 ```
+```text
+bird
+cat
+dog
+birdcat
+.....
+122bcd
+bcd122
+123bcd
+bcd123
+```
+
 
 #### limiting the char size reduces the output to 1500
 ```text
