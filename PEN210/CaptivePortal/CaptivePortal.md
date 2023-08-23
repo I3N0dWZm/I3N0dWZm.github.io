@@ -100,3 +100,8 @@ sudo hostapd -B mco-hostapd.conf
 
 sudo tail -f /var/log/apache2/access.log
 sudo find /tmp/ -iname passphrase.txt
+
+
+
+
+https://wiki.gentoo.org/wiki/Hostapd
