@@ -9,4 +9,6 @@ $current .= $data. "" ."\n";
 file_put_contents($file, $current);
 
 
+header('Location: index.php?success');
+
 ?>
