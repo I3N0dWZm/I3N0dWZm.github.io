@@ -26,6 +26,11 @@ BSSID               Ch  dBm  WPS  Lck  Vendor    ESSID
 AA:BB:CC:XX:YY:ZZ    1  -88  2.0  No   Broadcom  linksys
 ```
 
+#### For 5GHZ scanning
+```text
+sudo wash -i wlan0mon -5
+```
+
 ### Attacks to retrieve the pin
 
 #### Standard attack
