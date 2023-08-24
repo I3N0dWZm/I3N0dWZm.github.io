@@ -15,6 +15,6 @@ _______________________________________________________________
 
 [index.php](https://i3n0dwzm.github.io/PEN210/CaptivePortal/index.php.html)
 
-[login_check.php](https://i3n0dwzm.github.io/PEN210/CaptivePortal/login_check.php-.html)
+[login_check.php](https://i3n0dwzm.github.io/PEN210/CaptivePortal/login_check-php.html)
 
 [login_check2.php](https://i3n0dwzm.github.io/PEN210/CaptivePortal/login_check2.php.html)
