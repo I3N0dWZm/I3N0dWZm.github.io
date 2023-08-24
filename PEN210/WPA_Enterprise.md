@@ -102,7 +102,15 @@ MANA EAP EAP-MSCHAPV2 JTR | user1:$NETNTLM$5f57b0b6d16de082$e7db110006f749020ee9
 MANA EAP EAP-MSCHAPV2 HASHCAT | user1::::e7db110006f749020ee91761c8d2d4a4e54ba7fa9b97814e:5f57b0b6d16de082
 ```
 
-### Hashcat
+
+### Crack with asleep
+I could not get this to work ....
+```text
+asleap -C 5f:57:b0:b6:d1:6d:e0:82 -R e7:db:11:00:06:f7:49:02:0e:e9:17:61:c8:d2:d4:a4:e5:4b:a7:fa:9b:97:81:4e -W /usr/share/john/password.lst
+```
+
+
+### Crack with Hashcat
 5500 | NetNTLMv1 / NetNTLMv1+ESS
 
 ```text
