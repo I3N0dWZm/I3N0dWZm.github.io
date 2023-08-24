@@ -1,0 +1,59 @@
+## Setup an Access Point
+
+
+### Make sure the wifi device has the abilty to act an an access point
+
+sudo iw list
+
+...
+Supported interface modes:
+* IBSS
+* managed
+* AP
+* AP/VLAN
+* monitor
+* mesh point
+* P2P-client
+...
+
+### Check device is available
+ip a
+
+### Set IP on device
+sudo ip addr add 20.0.0.1/24 dev wlan0
+sudo ip link set wlan0 up
+ip a
+
+### Setup DHCP
+
+nano accesspoint-dnsmasq.conf
+
+domain-needed
+bogus-priv
+no-resolv
+filterwin2k
+expand-hosts
+domain=localdomain
+local=/localdomain/
+listen-address=20.0.0.1
+dhcp-range=20.0.0.100,20.0.0.199,12h
+dhcp-lease-max=100
+dhcp-option=option:router,20.0.0.1
+dhcp-authoritative
+# DNS: Primary and secondary Google DNS
+server=8.8.8.8
+server=8.8.4.4
+
+ufw allow 53/tcp
+ufw allow 53/udp
+ufw allow 67/udp
+sudo pkill dnsmasq
+sudo dnsmasq --conf-file=accesspoint-dnsmasq.conf
+
+sudo tail /var/log/dnsmasq.log
+
+
+
+
+
+
