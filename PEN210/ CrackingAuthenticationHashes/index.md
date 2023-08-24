@@ -2,6 +2,12 @@
 _______________________________________________________________
 
 
-[Bettercap](https://i3n0dwzm.github.io/PEN210/Bettercap.html)
+[Airolib-ng](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/Airolib-ng.html)
 
-[ChangingWifiMac](https://i3n0dwzm.github.io/PEN210/ChangingWifiMac.html)
+[Crunch](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/Crunch.html)
+
+[Hashcat](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/Hashcat.html)
+
+[RSMangler](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/RSMangler.html)
+
+[coWPAtty](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/coWPAtty.html)
