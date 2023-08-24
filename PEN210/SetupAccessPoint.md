@@ -52,6 +52,25 @@ sudo dnsmasq --conf-file=accesspoint-dnsmasq.conf
 
 sudo tail /var/log/dnsmasq.log
 
+### Routing -  allow traffic
+
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+sudo apt install nftables
+sudo nft add table nat
+sudo nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }'
+sudo nft add rule ip nat postrouting oifname "eth0" ip daddr != 20.0.0.1/24 masquerade
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
