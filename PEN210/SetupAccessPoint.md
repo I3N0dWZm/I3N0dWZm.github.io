@@ -61,6 +61,26 @@ sudo nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }
 sudo nft add rule ip nat postrouting oifname "eth0" ip daddr != 20.0.0.1/24 masquerade
 
 
+### accesspoint display
+
+nano fake-ap.conf
+
+interface=wlan0
+ssid=Fake-AP
+channel=11  
+# 802.11n
+hw_mode=g   
+#ieee80211n=1
+#FOR DIFFICULT WIFI DEVICES
+country_code=US
+ieee80211d=1
+# WPA2 PSK with CCMP
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=Neverevereverver1111
+
+sudo hostapd fake-ap.conf
 
 
 
