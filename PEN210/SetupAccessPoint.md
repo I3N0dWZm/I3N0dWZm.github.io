@@ -2,7 +2,7 @@
 
 
 ### Make sure the wifi device has the abilty to act an an access point
-
+```text
 sudo iw list
 
 ...
@@ -15,17 +15,21 @@ Supported interface modes:
 * mesh point
 * P2P-client
 ...
+```
 
 ### Check device is available
+```text
 ip a
-
+```
 ### Set IP on device
+```text
 sudo ip addr add 20.0.0.1/24 dev wlan0
 sudo ip link set wlan0 up
 ip a
+```
 
 ### Setup DHCP
-
+```text
 nano accesspoint-dnsmasq.conf
 
 domain-needed
@@ -43,7 +47,8 @@ dhcp-authoritative
 # DNS: Primary and secondary Google DNS
 server=8.8.8.8
 server=8.8.4.4
-
+```
+```text
 ufw allow 53/tcp
 ufw allow 53/udp
 ufw allow 67/udp
@@ -51,18 +56,18 @@ sudo pkill dnsmasq
 sudo dnsmasq --conf-file=accesspoint-dnsmasq.conf
 
 sudo tail /var/log/dnsmasq.log
-
+```
 ### Routing -  allow traffic
-
+```text
 echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 sudo apt install nftables
 sudo nft add table nat
 sudo nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }'
 sudo nft add rule ip nat postrouting oifname "eth0" ip daddr != 20.0.0.1/24 masquerade
-
+```
 
 ### accesspoint display
-
+```text
 nano fake-ap.conf
 
 interface=wlan0
@@ -79,12 +84,14 @@ wpa=2
 wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
 wpa_passphrase=Neverevereverver1111
-
+```
+```text
 sudo hostapd fake-ap.conf
+```
 
-
-
-
+```text
+sudo tail /var/log/dnsmasq.log -f
+```
 
 
 
