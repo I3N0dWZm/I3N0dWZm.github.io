@@ -54,10 +54,10 @@ sudo ufw allow in 53 udp
 sudo ufw allow in 67 udp
 ```
 ```text
-sudo dnsmasq --conf-file=/home/administrator/mco-dnsmasq.conf --test
+sudo dnsmasq --conf-file=/home/<user>/mco-dnsmasq.conf --test
 sudo dnsmasq --conf-file=mco-dnsmasq.conf
 ##debugging
-sudo dnsmasq --conf-file=/home/administrator/mco-dnsmasq.conf --log-debug -d
+sudo dnsmasq --conf-file=/home/<user>/mco-dnsmasq.conf --log-debug -d
 ```
 ```text
 sudo systemctl status dnsmasq.service
