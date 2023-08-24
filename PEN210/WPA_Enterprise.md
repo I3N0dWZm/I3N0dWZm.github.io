@@ -103,7 +103,7 @@ MANA EAP EAP-MSCHAPV2 HASHCAT | user1::::e7db110006f749020ee91761c8d2d4a4e54ba7f
 ```
 
 
-### Crack with asleep
+### Crack with Asleap
 I could not get this to work ....
 ```text
 asleap -C 5f:57:b0:b6:d1:6d:e0:82 -R e7:db:11:00:06:f7:49:02:0e:e9:17:61:c8:d2:d4:a4:e5:4b:a7:fa:9b:97:81:4e -W /usr/share/john/password.lst
