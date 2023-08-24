@@ -3,6 +3,9 @@
 
 #### General:
 
+#### [CaptivePortal](https://i3n0dwzm.github.io/PEN210/CaptivePortal/)
+
+#### [CaptivePortal](https://i3n0dwzm.github.io/PEN210/CrackingAuthenticationHashes/)
 _______________________________________________________________
 
 
