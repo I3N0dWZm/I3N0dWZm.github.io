@@ -40,6 +40,7 @@ It runs on channel 1
 
 
 #### To review just the information about the target ssid
+may be handy to review the beacon tag in wireshark to see what is supported
 ```text
 tshark -r file-01.cap -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype == 0x05 || eapol) && wlan.addr == 11:22:33:44:55:66" -2 -w out.cap -F pcap
 ```
