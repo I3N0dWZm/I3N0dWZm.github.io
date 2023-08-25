@@ -135,7 +135,30 @@ Status...........: Cracked
 Hash.Mode........: 5500 (NetNTLMv1 / NetNTLMv1+ESS)
 ```
 
+### Connect to Wifi
+```text
+nano /home/<user>/wificonnection.conf
 
+network={
+scan_ssid=1
+eap=PEAP
+ssid="YOUR_SSID"
+key_mgmt=WPA-EAP
+identity="YOUR_USERNAME"
+password="YOUR_PASSWORD"
+phase1="peaplabel=0"
+phase2="auth=MSCHAPV2"
+}
+
+wpa_supplicant -B -i wlan0 -c /home/<user>/wificonnection.conf
+
+dhclient wlan0
+```
+
+
+
+
+https://7thzero.com/blog/wifi-from-the-cli-in-linux-using-wpa_supplicant
 
 
 
