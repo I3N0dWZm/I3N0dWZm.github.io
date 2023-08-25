@@ -8,6 +8,17 @@ BSSID              PWR Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
 FC:EC:DA:8F:2E:90  -40     639       19    1   2  300. WPA2 CCMP   MGT  Playtronics
 ```
 MGT, meaning WPA Enterprise
+
+####To view Certificate for SSID
+```text
+sudo airodump-ng wlan0mon -w Playtronics
+```
+Review in wireshark with filter "wlan.bssid=FC:EC:DA:8F:2E:90 && eap && tls.handshake.certificate"
+in the submenus of the reviewed packet - open EAP -> TLS -> Certificate -> Certificates
+
+The certificate once exported can be reviewed with openssl to get the 
+
+openssl x509 -inform der -in cert.der text
  
 ### To mimick this AP
 
