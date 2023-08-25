@@ -135,7 +135,7 @@ Status...........: Cracked
 Hash.Mode........: 5500 (NetNTLMv1 / NetNTLMv1+ESS)
 ```
 
-### Connect to Wifi
+### Connect to real Wifi
 ```text
 nano /home/<user>/wificonnection.conf
 
