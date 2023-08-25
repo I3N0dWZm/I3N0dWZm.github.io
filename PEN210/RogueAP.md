@@ -19,7 +19,7 @@ iw list | grep "Supported interface modes" -A 8
 ```
 
 ```text
-sudo airodump-ng wlan0mon
+sudo airodump-ng wlan0mon -w file --output-format pcap
 
 BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID 
 11:22:33:44:55:66  -68       12        1    0   1  130   WPA2 CCMP   PSK  linksys
@@ -37,6 +37,14 @@ It uses WPA2 (TKIP/CCMP) (and probably WPA (TKIP/CCMP))
 It uses a auth of PSK
 
 It runs on channel 1
+
+
+#### To review just the information about the target ssid
+```text
+tshark -r file-01.cap -R "(wlan.fc.type_subtype == 0x08 || wlan.fc.type_subtype == 0x05 || eapol) && wlan.addr == 11:22:33:44:55:66" -2 -w out.cap -F pcap
+```
+
+
 
 
 #### Create Configuration file
