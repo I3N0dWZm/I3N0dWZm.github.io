@@ -151,9 +151,26 @@ phase2="auth=MSCHAPV2"
 }
 
 wpa_supplicant -B -i wlan0 -c /home/<user>/wificonnection.conf
-
 dhclient wlan0
 ```
+Or reduced verion if the first is causing issues
+
+```text
+nano /home/<user>/wificonnection.conf
+
+network={
+mode=0
+scan_ssid=1
+ssid="YOUR_SSID"
+key_mgmt=WPA-EAP
+identity="YOUR_SSID\YOUR_USERNAME"
+password="YOUR_PASSWORD"
+}
+
+wpa_supplicant -B -i wlan0 -c /home/<user>/wificonnection.conf
+dhclient wlan0
+```
+
 
 
 
