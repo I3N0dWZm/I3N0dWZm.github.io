@@ -1,4 +1,4 @@
-### Putty - add print to pdf functionality for Windows
+### Putty - Add print to pdf functionality for Windows
 ### 02-01-24
 
 I was asked if its possible to add print from screen to pdf functionalty within puttty, this was how i added the option.
@@ -289,6 +289,15 @@ void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboa
     int com = system(command);
 }
 ```
+compile the programs in the cmd root of the putty source directory.
+```text
+cmake --build .
+```
+
+
+
+
+
 
 
 
