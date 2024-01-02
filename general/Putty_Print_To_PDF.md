@@ -10,7 +10,10 @@ Extract the putty-src.zip file
 
 Download libharu-2.4.4 - http://libharu.org/
 
-Follow the instructions to build libharu and copy to the root of the putty source folder. (libharu-2.4.4/include/*.c to root dir of putty source, libharu-2.4.4/src/debug/* to root dir of putty source and /debug/)
+Follow the instructions to build libharu and copy to the root of the putty source folder. 
+
+libharu-2.4.4/include/*.c to root dir of putty source.
+Libharu-2.4.4/src/debug/*.* to root dir of putty source and /debug/ folder.
 
 Create the path with security access "C:\Program Files (x86)\PuTTY\print\" to store the pdf and debug information
 
