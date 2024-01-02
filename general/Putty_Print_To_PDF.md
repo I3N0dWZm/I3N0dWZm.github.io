@@ -324,6 +324,8 @@ You may also require the files ucrtbased.dll and vcruntime140d.dll if they are n
 
 If a visual c++ error occurs like "stream !=nullptr" when clicking "Print to PDF" its probably because the program doesnt have enough rights to write to the path - "C:\Program Files (x86)\PuTTY\print\"
 
+link for those files is stored here - https://I3N0dWZm.github.io/Putty_Print/
+
 
 
 
