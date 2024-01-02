@@ -289,11 +289,14 @@ void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboa
     int com = system(command);
 }
 ```
-compile the programs in the cmd root of the putty source directory.
+Compile the programs in the cmd root of the putty source directory.
 ```text
 cmake --build .
 ```
 
+Open the new puty.exe from the debug directory, copy the hpdf.dll into the debug folder, Print to PDF options should now be available.
+
+You may also require the files ucrtbased.dll and vcruntime140d.dll if they are not already installed in windows.
 
 
 
