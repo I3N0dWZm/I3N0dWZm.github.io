@@ -10,7 +10,7 @@ Extract the putty-src.zip file
 
 Download libharu-2.4.4 - http://libharu.org/
 
-Follow the instructions to build libharu and copy to the root of the putty source folder.
+Follow the instructions to build libharu and copy to the root of the putty source folder. (libharu-2.4.4/src/*.c to root dir of putty source)
 
 Create the path with security access "C:\Program Files (x86)\PuTTY\print\" to store the pdf and debug information
 
@@ -41,7 +41,7 @@ Add libharu and locale includes (around line number 13)
 #include "hpdf.h"
 #include <locale.h>
 ```
-Create a function called clipme_return - which is very similar to clipme but returns the data instead of adding it to the clipboard (around line number 6758)
+Create a function called clipme_return - which is very similar to clipme but returns the data instead of adding it to the clipboard (around line number 6740)
 ```text
 wchar_t* clipme_return(Terminal *term, pos top, pos bottom, bool rect, bool desel, const int *clipboards, int n_clipboards)
 {
@@ -215,7 +215,7 @@ wchar_t* clipme_return(Terminal *term, pos top, pos bottom, bool rect, bool dese
 }
 ```
 
-Create the term_copyall_and_print function which grabs the info and converts to PDF storing in the dir "C:\Program Files (x86)\PuTTY\print\" (around line number 6971)
+Create the term_copyall_and_print function which grabs the info and converts to PDF storing in the dir "C:\Program Files (x86)\PuTTY\print\" (around line number 6925)
 ```text
 void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboards)
 {
@@ -301,6 +301,7 @@ void term_copyall_and_print(Terminal *, const int *, int);
 
 Compile the programs in the cmd root of the putty source directory.
 ```text
+cmake .
 cmake --build .
 ```
 
