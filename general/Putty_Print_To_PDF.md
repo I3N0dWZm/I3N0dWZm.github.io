@@ -1,4 +1,4 @@
-### Putty - add print to pdf functionality
+### Putty - add print to pdf functionality for Windows
 ### 02-01-24
 
 I was asked if its possible to add print from screen to pdf functionalty within puttty, this was how i added the option.
@@ -12,7 +12,9 @@ Download libharu-2.4.4 - http://libharu.org/
 
 Follow the instructions to build libharu and copy to the root of the putty source folder.
 
-Now to add the the print funtions to the putty code! 
+Create the path with security access "C:\Program Files (x86)\PuTTY\print\" to store the pdf and debug information
+
+#### Now to add the the print funtions to the putty code! 
 
 #### windows\window.c
 
@@ -24,7 +26,7 @@ Add the menu item (around line number 790)
 ```text
 AppendMenu(m, MF_ENABLED, IDM_PRINT, "Print To PDF");
 ```
-set IDM_PRINT to call function term_copyall_and_print
+set IDM_PRINT to call function term_copyall_and_print (around line number 2543)
 ```text
 case IDM_PRINT:
   term_copyall_and_print(term, clips_system, lenof(clips_system));
@@ -39,7 +41,6 @@ Add libharu and locale includes (around line number 13)
 #include "hpdf.h"
 #include <locale.h>
 ```
-
 Create a function called clipme_return - which is very similar to clipme but returns the data instead of adding it to the clipboard (around line number 6758)
 ```text
 wchar_t* clipme_return(Terminal *term, pos top, pos bottom, bool rect, bool desel, const int *clipboards, int n_clipboards)
@@ -214,10 +215,80 @@ wchar_t* clipme_return(Terminal *term, pos top, pos bottom, bool rect, bool dese
 }
 ```
 
-
-
-
-
+Create the term_copyall_and_print function which grabs the info and converts to PDF storing in the dir "C:\Program Files (x86)\PuTTY\print\" (around line number 6971)
+```text
+void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboards)
+{
+    pos top;
+    pos bottom;
+    tree234 *screen = term->screen;
+    top.y = -sblines(term);
+    top.x = 0;
+    bottom.y = find_last_nonempty_line(term, screen);
+    bottom.x = term->cols;
+    wchar_t* result = clipme_return(term, top, bottom, false, true, clipboards, n_clipboards);
+	/*write result to file*/
+	const wchar_t* filename1 = L"C:\\Program Files (x86)\\PuTTY\\print\\putty-clipboard.txt";
+	FILE* file1 = _wfopen(filename1, L"w");
+	if (file1 == NULL) {
+		fwprintf(stderr, L"Error: Unable to open the file.\n");
+	} else {
+		fwprintf(file1, L"%ls", result);
+		fclose(file1);
+	}
+	/*convert wchar_t to char*/
+	const wchar_t * p;
+	mbstate_t mbs;
+	char buffer[5120];
+	int ret;
+	setlocale(LC_ALL, "");
+	mbrlen (NULL,0,&mbs);    /* initialize mbs */
+	p = result;
+	ret = wcsrtombs ( buffer, &p, sizeof(buffer), &mbs );
+	if (ret==5120) buffer[5119]='\0';
+	if (ret) printf ("multibyte string: %s \n",buffer);
+	char *token;
+	token = strtok(buffer, "\r");
+	FILE *filePointer = fopen("C:\\Program Files (x86)\\PuTTY\\print\\debug.txt", "w");
+	fprintf(filePointer, "debugging...\n");
+	const char *pdffile = "C:\\Program Files (x86)\\PuTTY\\print\\print.pdf";
+	fprintf(filePointer, "filename set...\n");
+	setlocale(LC_ALL, ".437");
+	FILE *file = stdout;  // Use stdout for error messages
+    HPDF_Doc pdf = HPDF_New(NULL, NULL);
+    if (pdf == NULL) {
+        fprintf(filePointer, "Error: cannot create PDF document\n");
+        return;
+    }
+	fprintf(filePointer, "HPDF_New...\n");	
+	HPDF_Page page = HPDF_AddPage(pdf);
+	HPDF_Page_SetSize(page, HPDF_PAGE_SIZE_A4, HPDF_PAGE_PORTRAIT);
+	HPDF_Font font = HPDF_GetFont(pdf, "Courier", NULL);
+	HPDF_Page_SetFontAndSize(page, font, 12);
+	HPDF_Page_BeginText(page);
+	HPDF_Page_MoveTextPos(page, 10, 780); //start position
+	HPDF_Page_ShowText(page, "");
+	while (token != NULL) {	
+		HPDF_Page_MoveTextPos (page, 0, -15);
+		HPDF_Page_ShowText(page, token);
+        printf("Token: %s\n", token);
+        token = strtok(NULL, "\r");
+    }
+	HPDF_Page_EndText(page);
+	fprintf(filePointer, "HPDF settings page details...\n");
+	if (HPDF_SaveToFile(pdf, pdffile) != HPDF_OK) {
+		fprintf(filePointer, "Error: cannot write PDF file\n");
+		HPDF_Free(pdf);
+		return;
+	}
+	fclose(filePointer);
+	/* open file */
+	const char* commandFormat = "start \"\" \"%s\"";
+    char command[512];  // Adjust the size based on your needs
+    snprintf(command, sizeof(command), commandFormat, pdffile);
+    int com = system(command);
+}
+```
 
 
 
