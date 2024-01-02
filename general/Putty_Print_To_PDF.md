@@ -33,6 +33,14 @@ case IDM_PRINT:
   break;
 ```
 
+### Windows\putty.vcxproj
+
+Append Dependencies to the AdditionalDependencies line
+
+```text
+<AdditionalDependencies>..\Debug\hpdf.lib;
+```
+
 ### terminal\terminal.c
 
 Add libharu and locale includes (around line number 13)
@@ -299,6 +307,7 @@ void term_copyall_and_print(Terminal *, const int *, int);
 
 
 
+
 Compile the programs in the cmd root of the putty source directory.
 ```text
 cmake .
@@ -308,6 +317,8 @@ cmake --build .
 Open the new puty.exe from the debug directory, copy the hpdf.dll into the debug folder, Print to PDF options should now be available.
 
 You may also require the files ucrtbased.dll and vcruntime140d.dll if they are not already installed in windows.
+
+If a visual c++ error occurs like "stream !=nullptr" when clicking "Print to PDF" its probably because the program doesnt have enough rights to write to "C:\Program Files (x86)\PuTTY\print\"
 
 
 
