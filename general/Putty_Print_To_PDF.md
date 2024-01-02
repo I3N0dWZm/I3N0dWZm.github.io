@@ -292,7 +292,7 @@ void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboa
 
 ### putty.h
 
-Add function detail to putty.h (around line number 2208)
+Add export function detail to putty.h (around line number 2208)
 ```text
 void term_copyall_and_print(Terminal *, const int *, int);
 ```
