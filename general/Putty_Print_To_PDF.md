@@ -36,7 +36,7 @@ case IDM_PRINT:
   break;
 ```
 
-### Windows\putty.vcxproj
+### windows\putty.vcxproj
 
 Append Dependencies to the AdditionalDependencies line
 
