@@ -24,7 +24,7 @@ Define IDM_PRINT to window.c (around line number 54)
 ```
 Add the menu item (around line number 790)
 ```text
-AppendMenu(m, MF_ENABLED, IDM_PRINT, "Print To PDF");
+AppendMenu(m, MF_ENABLED, IDM_PRINT, "Print to PDF");
 ```
 set IDM_PRINT to call function term_copyall_and_print (around line number 2543)
 ```text
