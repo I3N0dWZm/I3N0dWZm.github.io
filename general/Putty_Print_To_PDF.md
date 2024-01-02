@@ -14,9 +14,9 @@ Follow the instructions to build libharu and copy to the root of the putty sourc
 
 Create the path with security access "C:\Program Files (x86)\PuTTY\print\" to store the pdf and debug information
 
-#### Now to add the the print funtions to the putty code! 
+### Now to add the the print funtions to the putty code! 
 
-#### windows\window.c
+### windows\window.c
 
 Define IDM_PRINT to window.c (around line number 54)
 ```text
@@ -33,7 +33,7 @@ case IDM_PRINT:
   break;
 ```
 
-#### terminal\terminal.c
+### terminal\terminal.c
 
 Add libharu and locale includes (around line number 13)
 ```text
