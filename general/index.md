@@ -18,3 +18,5 @@ _______________________________________________________________
 [Rollback the MaximumPasswordAge Gradually](https://i3n0dwzm.github.io/general/rollback_max_age_password.html)
 
 [Shrink an MP4 filesize with ffmpeg](https://i3n0dwzm.github.io/general/shrink_mp4.html)
+
+[Adding print to PDF option in Puttty](https://i3n0dwzm.github.io/general/Putty_Print_To_PDF.html)
