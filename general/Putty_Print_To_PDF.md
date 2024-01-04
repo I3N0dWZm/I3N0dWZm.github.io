@@ -1,7 +1,7 @@
-### Putty - Add print to pdf functionality for Windows
+### Putty - Add print to pdf functionality for PuTTY in Windows
 ### 02-01-24
 
-I was asked if its possible to add print from screen to pdf functionalty within puttty, this was how i added the option.
+I was asked if its possible to add print from screen to pdf functionalty within the putty dropdown, this was how i added the option.
 
 Download the putty source from earth.il - from https://the.earth.li/~sgtatham/putty/0.79/putty-src.zip
 
