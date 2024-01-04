@@ -19,9 +19,9 @@ Follow the default Libharu instructions to build Libharu hpdf files and copy to 
 
 Create the path with security access "C:\Program Files (x86)\PuTTY\print\" to store the pdf and debug information
 
-### Now to add the the print funtions to the putty code! 
+### Now to add the the print functions to the putty code! 
 
-### windows\window.c
+### windows\window.c - changes
 
 Define IDM_PRINT to window.c (around line number 54)
 ```text
@@ -38,7 +38,7 @@ case IDM_PRINT:
   break;
 ```
 
-### windows\putty.vcxproj / pterm.vcxproj / puttytel.vcxproj
+### windows\putty.vcxproj / pterm.vcxproj / puttytel.vcxproj - changes
 
 Append Dependencies to the AdditionalDependencies line
 
@@ -46,7 +46,7 @@ Append Dependencies to the AdditionalDependencies line
 <AdditionalDependencies>..\Debug\hpdf.lib;
 ```
 
-### terminal\terminal.c
+### terminal\terminal.c - changes
 
 Add libharu and locale includes (around line number 13)
 ```text
@@ -324,11 +324,11 @@ cmake --build .
 
 Open the new putty.exe from the debug directory, copy the hpdf.dll into the debug folder, Print to PDF options should now be available.
 
-You may also require the files ucrtbased.dll and vcruntime140d.dll if they are not already installed in windows.
+You may also require the files ucrtbased.dll and vcruntime140d.dll in the debug directory if they are not already installed in windows.
 
-If a visual c++ error occurs like "stream !=nullptr" when clicking "Print to PDF" its probably because the program doesnt have enough rights to write to the path - "C:\Program Files (x86)\PuTTY\print\"
+If a visual c++ error occurs simlair to "stream !=nullptr" when clicking "Print to PDF" its probably because the program doesnt have enough rights to write to the print path - "C:\Program Files (x86)\PuTTY\print\"
 
-link for those modified files is stored here - https://github.com/I3N0dWZm/I3N0dWZm.github.io/tree/ca0627fd5686936eea1e82cdfbb4086a7783cc9c/Putty_Print
+Link for those modified files is stored here - https://github.com/I3N0dWZm/I3N0dWZm.github.io/tree/ca0627fd5686936eea1e82cdfbb4086a7783cc9c/Putty_Print
 
 
 
