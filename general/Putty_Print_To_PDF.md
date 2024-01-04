@@ -11,7 +11,9 @@ Download libharu-2.4.4 - http://libharu.org/
 
 Follow the instructions to build libharu and copy to the root of the putty source folder. 
 
-libharu-2.4.4/include/*.c to root dir of putty source.
+libharu-2.4.4/include/*.h to root dir of putty source.
+
+libharu-2.4.4/src/*.c to root dir of putty source.
 
 Libharu-2.4.4/src/debug/*.* to root dir of putty source and /debug/ folder.
 
@@ -36,7 +38,7 @@ case IDM_PRINT:
   break;
 ```
 
-### windows\putty.vcxproj
+### windows\putty.vcxproj / pterm.vcxproj / puttytel.vcxproj
 
 Append Dependencies to the AdditionalDependencies line
 
@@ -318,7 +320,7 @@ cmake --build .
 
 ### Notes
 
-Open the new puty.exe from the debug directory, copy the hpdf.dll into the debug folder, Print to PDF options should now be available.
+Open the new putty.exe from the debug directory, copy the hpdf.dll into the debug folder, Print to PDF options should now be available.
 
 You may also require the files ucrtbased.dll and vcruntime140d.dll if they are not already installed in windows.
 
