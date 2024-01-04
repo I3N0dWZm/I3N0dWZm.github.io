@@ -9,7 +9,7 @@ Extract the putty-src.zip file
 
 Download libharu-2.4.4 - http://libharu.org/
 
-Follow the instructions to build libharu and copy to the root of the putty source folder. 
+Follow the default Libharu instructions to build Libharu hpdf files and copy to the root of the putty source folder. 
 
 -Copy Libharu-2.4.4/include/*.h to root dir of putty source.
 
