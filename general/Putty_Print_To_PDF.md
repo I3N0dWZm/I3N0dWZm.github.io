@@ -229,6 +229,8 @@ wchar_t* clipme_return(Terminal *term, pos top, pos bottom, bool rect, bool dese
 ```
 
 Create the term_copyall_and_print function which grabs the info and converts to PDF storing in the dir "C:\Program Files (x86)\PuTTY\print\" (around line number 6925)
+Please note - This is quick and dirty code and could do with a re-write to capture more potential issues, but it does work!.
+
 ```text
 void term_copyall_and_print(Terminal *term, const int *clipboards, int n_clipboards)
 {
