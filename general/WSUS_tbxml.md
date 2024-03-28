@@ -158,10 +158,10 @@ https://www.vmadmin.co.uk/microsoft/43-winserver2008/139-wsuswidmemory
 
 slightly modifed increased size
 ```sql
-sp_configure ’show advanced options’, 1;
+sp_configure 'show advanced options', 1;
 reconfigure;
 go
-sp_configure ‘max server memory’, 1024;
+sp_configure 'max server memory', 1024;
 reconfigure;
 go
 exit
