@@ -5,6 +5,8 @@ When looking to improve the speed and stability of the WSUS service on a server 
 
 Even without selecting the category upon first sync WSUS appears to download a lot of extra details to the tbXml table (upon first sync the database was about 700mb that table was 580mb of that).
 
+The tbXml table contains both xml and a blob file which is a microsoft cab contianing even more xml.
+
 The code below removes old updates unrequired updates and non english rows from various tables including tbXml, as all machines on the network are relatively up to date anyway, change as required.
 
 
@@ -142,7 +144,12 @@ ALTER INDEX ALL ON dbo.tbLocalizedProperty REBUILD
 ALTER INDEX ALL ON dbo.tbMoreInfoURLForRevision REBUILD
 
 DBCC SHRINKDATABASE(SUSDB)
-
-
-
 ```
+
+To run this use the following command
+```sql
+sqlcmd -S np:\\.\pipe\MICROSOFT##WID\tsql\query -i "<PATH>\clean-up.sql"
+```
+
+
+
