@@ -153,10 +153,10 @@ sqlcmd -S np:\\.\pipe\MICROSOFT##WID\tsql\query -i "<PATH>\clean-up.sql"
 
 Other handy WSUS Guides:
 
+limit the amount of memory WID susdb can use.
 https://www.vmadmin.co.uk/microsoft/43-winserver2008/139-wsuswidmemory
 
-limit the amount of memory WID susdb can use.
-
+slightly modifed increased size
 ```sql
 sp_configure ’show advanced options’, 1;
 reconfigure;
@@ -167,8 +167,167 @@ go
 exit
 ```
 
+https://community.spiceworks.com/t/wsus-stabilization-and-performance-optimization/754055
+
+Slightly modified index script
+```sql
+USE [SUSDB]
+GO
+CREATE NONCLUSTERED INDEX [ix_ivwApiUpdateRevision_IsLatestRevision] ON [dbo].[ivwApiUpdateRevision]
+(
+	[IsLatestRevision] ASC
+)
+INCLUDE ([IsHidden], [IsLocallyPublished], [IsMandatory])
+
+CREATE NONCLUSTERED INDEX [ix_ivwApiUpdateRevision_UpdateID_IsLatestRevision_IsHidden] ON [dbo].[ivwApiUpdateRevision]
+(
+	[UpdateID] ASC,
+	[IsLatestRevision] ASC,
+	[IsHidden] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbCategory_CategoryIndex] ON [dbo].[tbCategory]
+(
+	[CategoryIndex] ASC
+)
+DROP INDEX [c0ChangeTracking] ON [dbo].[tbChangeTracking]
+CREATE CLUSTERED INDEX [c0ChangeTracking] ON [dbo].[tbChangeTracking]
+(
+	[ChangeNumber] DESC
+)
+CREATE NONCLUSTERED INDEX [ix_tbDeployment_ActionID_TargetGroupTypeID] ON [dbo].[tbDeployment]
+(
+	[ActionID] ASC,
+	[TargetGroupTypeID] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbDeployment_TargetGroupTypeID] ON [dbo].[tbDeployment]
+(
+	[TargetGroupTypeID] ASC
+)
+INCLUDE ([ActionID], [RevisionID])
+
+CREATE NONCLUSTERED INDEX [ix_tbEventInstance_EventNamespaceID_TimeAtServer] ON [dbo].[tbEventInstance]
+(
+	[EventNamespaceID] ASC,
+	[TimeAtServer] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbFile_IsEula] ON [dbo].[tbFile]
+(
+	[IsEula] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbFileOnServer_ActualState] ON [dbo].[tbFileOnServer]
+(
+	[ActualState] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbFileOnServer_ActualState_FileDigest_TimeAddedToQueue] ON [dbo].[tbFileOnServer]
+(
+	[ActualState] ASC
+)
+INCLUDE ([FileDigest], [TimeAddedToQueue])
+
+CREATE NONCLUSTERED INDEX [ix_tbFrontEndServersHealth_ServerName] ON [dbo].[tbFrontEndServersHealth]
+(
+	[ServerName] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbFrontEndServersHealth_ComponentName] ON [dbo].[tbFrontEndServersHealth]
+(
+	[ComponentName] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbLocalizedPropertyForRevision_LocalizedPropertyID] ON [dbo].[tbLocalizedPropertyForRevision]
+(
+	[LocalizedPropertyID] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbNotificationEvent_State] ON [dbo].[tbNotificationEvent]
+(
+	[State] ASC
+)
+CREATE NONCLUSTERED INDEX [ix_tbPreComputedLocalizedProperty_ShortLanguage] ON [dbo].[tbPreComputedLocalizedProperty]
+(
+	[ShortLanguage] ASC
+)
+INCLUDE ([Title], [Description], [ReleaseNotes], [RevisionID])
+
+CREATE NONCLUSTERED INDEX [ix_tbProperty_CreationDate_ReceivedFromCreatorService] ON [dbo].[tbProperty]
+(
+	[CreationDate] ASC,
+	[ReceivedFromCreatorService] ASC
+)
+INCLUDE ([PublicationState])
+
+CREATE NONCLUSTERED INDEX [ix_tbProperty_PublicationState] ON [dbo].[tbProperty]
+(
+	[PublicationState] ASC
+)
+
+CREATE NONCLUSTERED INDEX [ix_tbProperty_DefaultPropertiesLanguageID] ON [dbo].[tbProperty]
+(
+	[DefaultPropertiesLanguageID] ASC
+)
+
+CREATE NONCLUSTERED INDEX [ix_tbReference_NLBMasterFrontEndServer] ON [dbo].[tbReference]
+(
+	[NLBMasterFrontEndServer] ASC
+)
+
+CREATE NONCLUSTERED INDEX [ix_tbRevision_State] ON [dbo].[tbRevision]
+(
+	[State] ASC
+)
+INCLUDE ([LocalUpdateID])
 
 
+
+CREATE NONCLUSTERED INDEX [ix_tbSchedule_ScheduleTarget_ScheduleID_ScheduledRunTime] ON [dbo].[tbSchedule]
+(
+	[ScheduleTarget] ASC,
+	[ScheduleID] ASC,
+	[ScheduledRunTime] ASC
+)
+
+CREATE NONCLUSTERED INDEX [ix_tbUpdate_IsHidden] ON [dbo].[tbUpdate]
+(
+	[IsHidden] ASC
+)
+
+CREATE NONCLUSTERED INDEX [ix_tbXml_RootElementType_LanguageID] ON [dbo].[tbXml]
+(
+	[RootElementType] ASC,
+	[LanguageID] ASC
+)
+
+GO
+```
+
+
+
+
+View Table sizes
+```sql
+SELECT 
+    t.NAME AS TableName,
+    s.Name AS SchemaName,
+    p.rows AS RowCounts,
+    SUM(a.total_pages) * 8 AS TotalSpaceKB, 
+    SUM(a.used_pages) * 8 AS UsedSpaceKB, 
+    (SUM(a.total_pages) - SUM(a.used_pages)) * 8 AS UnusedSpaceKB
+FROM 
+    sys.tables t
+INNER JOIN      
+    sys.indexes i ON t.OBJECT_ID = i.object_id
+INNER JOIN 
+    sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
+INNER JOIN 
+    sys.allocation_units a ON p.partition_id = a.container_id
+LEFT OUTER JOIN 
+    sys.schemas s ON t.schema_id = s.schema_id
+WHERE 
+    t.NAME NOT LIKE 'dt%' 
+    AND t.is_ms_shipped = 0
+    AND i.OBJECT_ID > 255 
+GROUP BY 
+    t.Name, s.Name, p.Rows
+ORDER BY 
+    TotalSpaceKB DESC
+```
 
 
 
