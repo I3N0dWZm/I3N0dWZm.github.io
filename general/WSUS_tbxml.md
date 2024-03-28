@@ -147,7 +147,7 @@ DBCC SHRINKDATABASE(SUSDB)
 ```
 
 To run this use the following command
-```sql
+```
 sqlcmd -S np:\\.\pipe\MICROSOFT##WID\tsql\query -i "<PATH>\clean-up.sql"
 ```
 
