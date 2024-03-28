@@ -155,6 +155,8 @@ Other handy WSUS Guides:
 
 https://www.vmadmin.co.uk/microsoft/43-winserver2008/139-wsuswidmemory
 
+limit the amount of memory WID susdb can use.
+
 ```sql
 sp_configure ’show advanced options’, 1;
 reconfigure;
