@@ -3,11 +3,11 @@
 
 When looking to improve the speed and stability of the WSUS service on a server I realized that the tbXml table with SUSDB database was taking up a huge amount of space and a phenomenal number of rows for a fresh installation of WSUS.
 
-Even without selecting the category upon first sync WSUS appears to download a lot of extra details to the tbXml table (upon first sync the database was about 700mb that table was 580mb of that).
+Even without selecting the category upon first sync WSUS appears to download a lot of extra details to the tbXml table (upon first sync the database file was about 700mb and the tbXml table was 580mb of that).
 
 The tbXml table contains both xml and a blob file which is a microsoft cab contianing even more xml.
 
-The code below removes old updates unrequired updates and non english rows from various tables including tbXml, as all machines on the network are relatively up to date anyway, change as required.
+The code below removes old updates unrequired updates and non english rows from various tables including tbXml, as all machines on the network are relatively up to date anyway, this reduce my tbXml tbale to about 100mb, obviously backup before testing and change as required, your setup may be different from ours.
 
 
 #### cleanup.sql
@@ -150,6 +150,29 @@ To run this use the following command
 ```
 sqlcmd -S np:\\.\pipe\MICROSOFT##WID\tsql\query -i "<PATH>\clean-up.sql"
 ```
+
+Other handy WSUS Guides:
+
+https://www.vmadmin.co.uk/microsoft/43-winserver2008/139-wsuswidmemory
+
+```sql
+sp_configure ’show advanced options’, 1;
+reconfigure;
+go
+sp_configure ‘max server memory’, 1024;
+reconfigure;
+go
+exit
+```
+
+
+
+
+
+
+
+
+
 
 
 
