@@ -134,6 +134,7 @@ WHERE RevisionId IN (SELECT RevisionID FROM CTE);
 /****** Actually delete old updates! ******/
 
 DELETE FROM [SUSDB].[dbo].[tbXml] WHERE RootElementXml LIKE 'OLD%'
+DELETE FROM tbXml where revisionid in (select revisionid from tbRevision where LocalUpdateId in (select LocalUpdateId from tbUpdate where ishidden=1 ))
 
 /****** rebuild and shrink database ******/
 
