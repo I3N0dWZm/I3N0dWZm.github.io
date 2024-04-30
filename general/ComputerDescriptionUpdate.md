@@ -5,6 +5,8 @@ The code below updates the computer description in active directory with the mos
 
 The code utlizes the security event 4776 - https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776
 
+This script would be run periodically on a domain controller, to allow the description to update with the current username.
+
 #### ComputerDescriptionUpdate.py
 ```python 
 import wmi
