@@ -57,4 +57,65 @@ $oid
 8. Select option view at the top, add/remove columns - add new column.
 
 
+### 4. Write some script to find the relevent information and import it into the attribute field.
+
+As an example you could just run the following code to import data into a attrbute called serialno.
+
+```text
+powershell set-adcomputer -identity %PC% -replace @{serialNo= %serialno%}
+```text
+
+If you require something a bit more automated python and a mix powershell and wmic could be used, with a predefined list of computers you wish to check in csv format.
+
+```python
+import wmi
+import os
+import time
+import datetime
+import subprocess
+
+def set_serial_on_computer(pc,serialno):
+    try:
+        os.system('powershell set-adcomputer -identity "'+pc+'" -replace @{serialNo= """'+serialno+'"""}')
+    except:
+        pass
+
+def read_file():
+    lines = []
+    with open('list.csv') as file:
+        for line in file: 
+            if "Name" not in line:
+                line = line.strip('"').strip('"\n')
+                lines.append(line)
+    return lines
+
+def wmic(pc):
+    try:
+        #wmic /node:pc bios get serialnumber
+        proc = subprocess.Popen(["wmic", "/node:'"+pc+"'","bios","get","serialnumber"], stdout=subprocess.PIPE, shell=True)
+        (out, err) = proc.communicate()
+        serialno = out.replace("SerialNumber","").replace("\r","").replace("\n","").replace(" ","")
+        print(pc +" : " + serialno)
+        if len(str(serialno)) > 0:
+            set_serial_on_computer(pc,serialno)
+    except:
+        pass
+
+def worker():
+    data = read_file() 
+    print (data)
+    for pc in data:
+        wmic(pc)
+
+if __name__ == '__main__':
+    worker()
+
+```python
+
+
+
+
+
+
+
 
