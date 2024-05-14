@@ -6,7 +6,7 @@ I was asked if its poosible to add addtional computer information to active dire
 This takes 4 stages:
 1. Create the new item to the schemas attributes.
 2. Add the attribute to the computer class.
-3. (optional) - Add the new attribute as a extraColumns in active directory users and computers.
+3. (optional) - Add the new attribute as an extraColumns in active directory users and computers.
 4. Write some script to find the relevent information and import it into the attribute field.
 
 
@@ -51,7 +51,10 @@ $oid
 2. Expand Configuration
 3. Go To -> DisplaySpecfiers->CN=409->CN=orginizationUnit-Display
 4. Tab “Attribute Editor” ->extraColumns
-5. Add attribute in syntax - -	<atributename>, <atributename>,0,150,0
+5. Add attribute in syntax
+```text
+%attributename%, %attributename%,0,150,0
+```
 6. Apply/OK.
 7. Open "Active directory users and computers"
 8. Select option view at the top, add/remove columns - add new column.
