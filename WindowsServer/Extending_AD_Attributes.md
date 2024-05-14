@@ -63,7 +63,7 @@ As an example you could just run the following code to import data into a attrbu
 
 ```text
 powershell set-adcomputer -identity %PC% -replace @{serialNo= %serialno%}
-```text
+```
 
 If you require something a bit more automated python and a mix powershell and wmic could be used, with a predefined list of computers you wish to check in csv format.
 
@@ -110,7 +110,7 @@ def worker():
 if __name__ == '__main__':
     worker()
 
-```python
+```
 
 
 
