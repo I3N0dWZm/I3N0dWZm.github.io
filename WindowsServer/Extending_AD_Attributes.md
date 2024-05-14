@@ -6,7 +6,7 @@ I was asked if its poosible to add addtional computer information to active dire
 This takes 4 stages:
 1. Create the new item to the schemas attributes.
 2. Add the attribute to the computer class.
-3. (optional) - Add the new attribute as a veiable colum in active directory users and computers.
+3. (optional) - Add the new attribute as a extraColumns in active directory users and computers.
 4. Write some script to find the relevent information and import it into the attribute field.
 
 
@@ -16,7 +16,7 @@ This takes 4 stages:
 2. load "active directory schema" in mmc.
 3. go to attrbutes folder and right click, then select "create attribute ..."
 4. Create a common name for the new attribute 
-5. Generate x500 Object ID with code below.
+5. Generate x500 Object ID with powershell code below.
 
 ```text
 #--- 
@@ -35,10 +35,26 @@ $oid
 #---
 ```
 6. Select syntax - (i use - unicode string).
-7. click "OK" to save.
+7. Click "OK" to save.
+
+### 2. Add the attribute to the computer class.
+
+1. Within active directory schema - select classes.
+2. Select "computer" and the attributes tab.
+3. Add the new attrbiute within the optional selection.
+4. Click "OK" to save.
+
+
+### 3. (optional) - Add the new attribute as a extraColumns in active directory users and computers. 
+
+1. Open adsiedit.msc
+2. Expand Configuration
+3. Go To -> DisplaySpecfiers->CN=409->CN=orginizationUnit-Display
+4. Tab “Attribute Editor” ->extraColumns
+5. Add attribute in syntax - -	<atributename>, <atributename>,0,150,0
+6. Apply/OK.
+7. Open "Active directory users and computers"
+8. Select option view at the top, add/remove columns - add new column.
 
 
 
-
-
- 
