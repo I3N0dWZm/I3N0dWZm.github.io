@@ -117,6 +117,15 @@ if __name__ == '__main__':
 
 
 
+references
+
+https://www.rebeladmin.com/2017/11/step-step-guide-create-custom-active-directory-attributes/
+https://learn.microsoft.com/en-us/archive/technet-wiki/51121.active-directory-schema-update-and-custom-attribute
+https://www.alitajran.com/additional-columns-active-directory/
+
+
+
+
 
 
 
