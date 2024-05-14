@@ -1,7 +1,7 @@
 ### Extending Active Directory Attributes
 ### 14-05-24
 
-I was asked if its poosible to add addtional computer information to active directory computer objects, such as bios, cpu, processor, memoery amount, etc.
+I was asked if its possible to add addtional computer information to active directory computer objects, such as bios, cpu, processor, memory amount, serial number etc in a automated way.
 
 This takes 4 stages:
 1. Create the new item to the schemas attributes.
