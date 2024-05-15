@@ -11,7 +11,7 @@ SELECT * FROM Win32_NTLogEvent WHERE Logfile=""'Security' AND EventCode='4776'
 
 The below code will need to be run on the PDC or BDC to update the decription with the current user logged in.
 
-It will check the event viewer for the last 4 hours (this may need to be adjsuted depending on how many event are logged).
+It will check the event viewer for the last 4 hours (this may need to be adjusted depending on how many event are logged).
 
 ```python
 import wmi
