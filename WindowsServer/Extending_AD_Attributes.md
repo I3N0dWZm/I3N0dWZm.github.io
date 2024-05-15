@@ -3,6 +3,8 @@
 
 I was asked if its possible to add addtional computer information to active directory computer objects, such as bios, cpu, processor, memory amount, serial number etc in a automated way.
 
+Per attribute/field could be added in this way.
+
 This takes 4 stages:
 1. Create the new item to the schemas attributes.
 2. Add the attribute to the computer class.
@@ -12,7 +14,7 @@ This takes 4 stages:
 
 ### 1. Create the new item to the schemas attributes.
 
-1. Register the schema.msc if you havnt alrady (regsvr32 schmmgmt.dll)
+1. Register the schema.msc if you havnt already (regsvr32 schmmgmt.dll)
 2. load "active directory schema" in mmc.
 3. go to attrbutes folder and right click, then select "create attribute ..."
 4. Create a common name for the new attribute 
