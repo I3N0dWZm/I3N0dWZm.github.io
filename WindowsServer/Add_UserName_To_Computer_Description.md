@@ -56,5 +56,7 @@ def worker():
 if __name__ == '__main__':
     worker()
 ```
+The code utlizes the security event 4776 - https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4776
+
 This could be run as a scheduled task for up to date information.
 
