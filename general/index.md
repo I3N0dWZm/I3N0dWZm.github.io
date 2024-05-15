@@ -23,4 +23,3 @@ _______________________________________________________________
 
 [Optimizing WSUS tbXML table](https://i3n0dwzm.github.io/general/WSUS_tbxml.html)
 
-[Active Directory Update Computer Description with Username](https://i3n0dwzm.github.io/general/ComputerDescriptionUpdate.html)
