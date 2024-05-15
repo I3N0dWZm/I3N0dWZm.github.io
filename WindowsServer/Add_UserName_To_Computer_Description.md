@@ -1,4 +1,4 @@
-### Adding UserName To Computer Description Programmcailly
+### Adding User Name To Computer Description Programmatically
 ### 15-05-24
 
 Recently i found a way to add the current users to each computer in active directory using event viewer and python/powershell.
@@ -56,6 +56,5 @@ def worker():
 if __name__ == '__main__':
     worker()
 ```
-
-```
+This could be run as a scheduled task for up to date information.
 
