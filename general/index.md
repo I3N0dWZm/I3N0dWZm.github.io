@@ -23,3 +23,4 @@ _______________________________________________________________
 
 [Optimizing WSUS tbXML table](https://i3n0dwzm.github.io/general/WSUS_tbxml.html)
 
+[CPUID Information](https://i3n0dwzm.github.io/general/CPUID_Information.html)
