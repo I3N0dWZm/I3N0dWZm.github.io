@@ -53,6 +53,45 @@ This appears to downgrade the processor to a very old/odd intel processor, but i
 | 30  |                   | 1          | 1          | 1          | Reserved                  | Initial APIC ID (31:24)       | Reserved | Reserved    |
 | 31  |                   | 0          | 0          | 0          | Reserved                  | Initial APIC ID (31:24)       | Hypervisor present | Reserved |
 
+#### AMD CPUID Values (a lot of adjustments on cpuid1.ecx). 
+
+| Bit | cpuid0.eax        | cpuid0.ebx | cpuid0.ecx | cpuid0.edx | cpuid1.eax                | cpuid1.ebx            | cpuid1.ecx       | cpuid1.edx  |
+|-----|-------------------|------------|------------|------------|---------------------------|-----------------------|------------------|-------------|
+| 0   | Max CPUID input   | 1          | 1          | 1          | Stepping ID (3:0)         | Brand Index (7:0)     | LAHF/SAHF        | FPU         |
+| 1   | Max CPUID input   | 0          | 1          | 0          | Stepping ID (3:0)         | Brand Index (7:0)     | CMPXCHG16B       | VME         |
+| 2   | Max CPUID input   | 0          | 0          | 1          | Stepping ID (3:0)         | Brand Index (7:0)     | SVM              | DE          |
+| 3   | Max CPUID input   | 0          | 0          | 0          | Stepping ID (3:0)         | Brand Index (7:0)     | Extended APIC ID | PSE         |
+| 4   |                   | 0          | 0          | 0          | Model (7:4)               | Brand Index (7:0)     | CR8 in 64-bit mode | TSC         |
+| 5   |                   | 0          | 1          | 1          | Model (7:4)               | Brand Index (7:0)     | ABM              | MSR         |
+| 6   |                   | 1          | 1          | 1          | Model (7:4)               | Brand Index (7:0)     | SSE4A            | PAE         |
+| 7   |                   | 0          | 0          | 0          | Model (7:4)               | Brand Index (7:0)     | MISALIGNSSE      | MCE         |
+| 8   |                   | 1          | 1          | 0          | Family (11:8)             | CLFLUSH Line Size (15:8) | 3DNowPrefetch   | CX8         |
+| 9   |                   | 0          | 0          | 1          | Family (11:8)             | CLFLUSH Line Size (15:8) | OSVW            | APIC        |
+| 10  |                   | 1          | 0          | 1          | Family (11:8)             | CLFLUSH Line Size (15:8) | IBS             | Reserved    |
+| 11  |                   | 0          | 0          | 1          | Family (11:8)             | CLFLUSH Line Size (15:8) | XOP             | SEP         |
+| 12  |                   | 1          | 0          | 0          | Processor Type (13:12)    | CLFLUSH Line Size (15:8) | SKINIT          | MTRR        |
+| 13  |                   | 1          | 0          | 1          | Processor Type (13:12)    | CLFLUSH Line Size (15:8) | WDT             | PGE         |
+| 14  |                   | 1          | 1          | 1          | Reserved                  | CLFLUSH Line Size (15:8) | LWP             | MCA         |
+| 15  |                   | 0          | 0          | 0          | Reserved                  | CLFLUSH Line Size (15:8) | FMA4            | CMOV        |
+| 16  |                   | 0          | 1          | 0          | Extended Model (19:16)    | Max Logical Processors (23:16) | TCE       | PAT         |
+| 17  |                   | 0          | 0          | 1          | Extended Model (19:16)    | Max Logical Processors (23:16) | NODEID MSR    | PSE-36      |
+| 18  |                   | 1          | 1          | 1          | Extended Model (19:16)    | Max Logical Processors (23:16) | TBM            | PSN         |
+| 19  |                   | 0          | 1          | 0          | Extended Model (19:16)    | Max Logical Processors (23:16) | Topology Extensions | CLFSH     |
+| 20  |                   | 1          | 0          | 0          | Extended Family (27:20)   | Max Logical Processors (23:16) | PerfTSC       | Reserved    |
+| 21  |                   | 1          | 0          | 0          | Extended Family (27:20)   | Max Logical Processors (23:16) | Data Breakpoint Extensions | DS |
+| 22  |                   | 1          | 1          | 1          | Extended Family (27:20)   | Max Logical Processors (23:16) | MOVU           | ACPI        |
+| 23  |                   | 0          | 0          | 0          | Extended Family (27:20)   | Max Logical Processors (23:16) | AES            | MMX         |
+| 24  |                   | 0          | 0          | 1          | Extended Family (27:20)   | Initial APIC ID (31:24) | SSE5           | FXSR        |
+| 25  |                   | 0          | 0          | 1          | Extended Family (27:20)   | Initial APIC ID (31:24) | AVX            | SSE         |
+| 26  |                   | 0          | 1          | 1          | Extended Family (27:20)   | Initial APIC ID (31:24) | RDRAND         | SSE2        |
+| 27  |                   | 1          | 0          | 0          | Extended Family (27:20)   | Initial APIC ID (31:24) | Reserved        | Reserved    |
+| 28  |                   | 0          | 0          | 0          | Reserved                  | Initial APIC ID (31:24) | Reserved        | Reserved    |
+| 29  |                   | 0          | 0          | 1          | Reserved                  | Initial APIC ID (31:24) | Reserved        | Reserved    |
+| 30  |                   | 1          | 1          | 1          | Reserved                  | Initial APIC ID (31:24) | Reserved        | Reserved    |
+| 31  |                   | 0          | 0          | 0          | Reserved                  | Initial APIC ID (31:24) | Reserved        | Reserved    |
+
+
+
 
 
 
