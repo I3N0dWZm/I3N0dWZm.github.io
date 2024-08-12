@@ -14,7 +14,7 @@ cpuid.1.ebx = "0000:0010:0000:0001:0000:1000:0000:0000"
 cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
 cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
 ```
-This appears to downgrade the processor to a very old/odd intel processor
+This appears to downgrade the processor to a very old/odd intel processor, but it does bypass checks
 
 #### Intel CPUID Values. 
 
@@ -138,7 +138,7 @@ int main(void) {
 }
 ```
 
-examples:
+Examples of valid codes (but these appear to fail for Mac OS):
 ```text
 Processor Name: Intel(R) Core(TM) i3-7100 CPU @ 3.90GHz
 
