@@ -18,7 +18,6 @@ This appears to downgrade the processor to a very old/od intel processor
 
 #### Intel CPUID Values. 
 
-```text
 | Bit | cpuid0.eax        | cpuid0.ebx | cpuid0.ecx | cpuid0.edx | cpuid1.eax                | cpuid1.ebx            | cpuid1.ecx       | cpuid1.edx  |
 |-----|-------------------|------------|------------|------------|---------------------------|-----------------------|------------------|-------------|
 | 0   | Max CPUID input    | 1          | 0          | 1          | Stepping ID (3:0)         | Brand Index (7:0)     | SSE3             | FPU         |
@@ -54,4 +53,4 @@ This appears to downgrade the processor to a very old/od intel processor
 | 30  |                   | 1          | 1          | 1          | Reserved                  | Initial APIC ID (31:24)       | Reserved | Reserved    |
 | 31  |                   | 0          | 0          | 0          | Reserved                  | Initial APIC ID (31:24)       | Hypervisor present | Reserved |
 
-```
+
