@@ -24,3 +24,5 @@ _______________________________________________________________
 [Optimizing WSUS tbXML table](https://i3n0dwzm.github.io/general/WSUS_tbxml.html)
 
 [CPUID Information](https://i3n0dwzm.github.io/general/CPUID_Information.html)
+
+[RetroArch Media Player (MP4's) Core](https://i3n0dwzm.github.io/general/Retroarch_media_player_core.html)
