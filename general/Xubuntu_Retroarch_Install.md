@@ -28,7 +28,7 @@ autologin-user=administrator
 autologin-user-timeout=0
 ```
 
-### auto_restart script - should retroarch crash.
+#### auto_restart script - should retroarch crash.
 
 nano ~/start_retroarch.sh
 ```text
@@ -54,7 +54,7 @@ Name=RetroArch
 Comment=Start RetroArch on login
 ```
 
-# Samba
+#### Samba
 ```text
 sudo apt install samba -y
 systemctl status smbd
