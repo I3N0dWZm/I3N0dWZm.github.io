@@ -4,6 +4,12 @@
 I wanted to see if its possbile to generate my own core for retroarch to play a playlist of mp4's straight from the retroarch interface, as yes it is possible, if a bit clunky.
 This was created in Xubuntu 24.01
 
+This core uses VLC player but the command could be changed to any media player (make sure vlc player is installed first)
+
+[File : simple_external_player_libretro.so ](https://i3n0dwzm.github.io/Files/simple_external_player_libretro.so)
+
+Here is how the new core was built.
+
 #### Install the essential tools
 ```text
 sudo apt install build-essential git
