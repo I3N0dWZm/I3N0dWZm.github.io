@@ -16,7 +16,7 @@ sudo apt install build-essential git
 sudo apt install make
 sudo apt install ffmpeg
 sudo apt install vlc
-sudo apt-get install pkg-config libasound2-dev libpulse-dev libx11-dev libudev-dev libgl1-mesa-dev libsdl2-dev
+sudo apt install pkg-config libasound2-dev libpulse-dev libx11-dev libudev-dev libgl1-mesa-dev libsdl2-dev
 ```
 #### Grab the libretro.h file from the include directory in libretro-common
 ```text
