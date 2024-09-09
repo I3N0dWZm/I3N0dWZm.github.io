@@ -21,7 +21,7 @@ sudo apt install pkg-config libasound2-dev libpulse-dev libx11-dev libudev-dev l
 #### Grab the libretro.h file from the include directory in libretro-common
 ```text
 mkdir ~/core
-cd core
+cd ~/core
 git clone https://github.com/libretro/libretro-common.git
 cp  ~/core/libretro-common/include/libretro.h ~/core/
 ```
