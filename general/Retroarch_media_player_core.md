@@ -237,6 +237,7 @@ nano music.lpl
 }
 ```
 ![alt text](https://i3n0dwzm.github.io/images/retroarch-video.png)
+![alt text](https://i3n0dwzm.github.io/images/retroarch-video2.png)
 
 
 
