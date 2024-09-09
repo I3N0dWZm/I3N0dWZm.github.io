@@ -2,7 +2,7 @@
 ### 08-09-24
 
 I wanted to see if its possbile to generate my own core for retroarch to play a playlist of mp4's straight from the retroarch interface, as yes it is possible, if a bit clunky.
-This was created in Xunbuntu 24.01
+This was created in Xubuntu 24.01
 
 #### Install the essential tools
 ```text
