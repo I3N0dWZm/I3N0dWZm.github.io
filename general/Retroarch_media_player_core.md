@@ -180,7 +180,7 @@ $(CORE_NAME)_libretro.so: $(OBJ)
 clean:
 	rm -f *.o $(CORE_NAME)_libretro.so
 ```
-#### build .so file and copy to core folder
+#### Build .so file and copy to core folder
 ```text
 make clean
 make
@@ -205,7 +205,7 @@ display_version = "v1.0"
 supports_no_game = "true"
 ```
 
-#### generate a playlist (for vlc) in the folder with the mp4 files
+#### Generate a playlist (for vlc) in the folder with the mp4 files
 ```text
 nano videos.m3u
 ....
@@ -214,7 +214,7 @@ sample-5s.mp4
 ....
 ```
 
-#### generate a playlist for retroarch to find this or mutple playlists
+#### Generate a playlist for retroarch to find this or multiple playlists
 
 The example below calls the video m3u list with path, assined the core, the core used will pass the playlist to vlc.
 replace <user> with the username, update paths to correct locations.
