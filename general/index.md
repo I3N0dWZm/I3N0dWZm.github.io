@@ -27,5 +27,5 @@ _______________________________________________________________
 
 [RetroArch Media Player (MP4's) Core](https://i3n0dwzm.github.io/general/Retroarch_media_player_core.html)
 
-[RetroArch Xubuntu Install](https://i3n0dwzm.github.io/general/Create_Xubuntu_Retroarch_Install.html)
+[RetroArch Xubuntu Install](https://i3n0dwzm.github.io/general/Xubuntu_Retroarch_Install.html)
 
